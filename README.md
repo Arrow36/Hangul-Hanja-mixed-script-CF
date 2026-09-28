@@ -77,6 +77,15 @@ python scripts/import_d1.py output/d1/main hangul-hanja-dictionary --local
 python scripts/import_d1.py output/d1/raw hangul-hanja-raw --local
 ```
 
+如果已经用 `scripts/import_dictionary.py` 生成了完整的 `hanja_dict.db`，本地测试可直接把它复制到 Wrangler 本地 D1，速度更快。先**停止 `npm run dev`**，运行两条本地 migration，然后执行：
+
+```bash
+python scripts/seed_local_d1.py
+npm run dev
+```
+
+`seed_local_d1.py` 只修改 `.wrangler/state` 中的本地测试数据库，不连接 Cloudflare；可重复运行。页面地址只有在 `npm run dev` 正在运行且终端显示 `Ready on http://127.0.0.1:8787` 时才可打开。
+
 `/kiwi-demo.html` 是 Kiwi 最小浏览器测试，输入 `한국 경제가 빠르게 성장했다.` 后显示 `form/tag/start/len`。`scripts/verify_conversion.py` 从原 Python 版本生成 42 条回归样例；当前在相同 token/候选条件下 TypeScript 显示文本 42/42 一致，`npm test` 生成 `tests_cf/differences.json`。浏览器 Kiwi 模型与 Python 模型的差异仍可能影响其他句子。
 
 ## 5. 部署与 GitHub 自动部署
