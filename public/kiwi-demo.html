@@ -1,0 +1,17 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>Kiwi WASM demo</title>
+<h1>Kiwi browser tokenization</h1><p id="status">Loading Kiwi model…</p>
+<textarea id="input" rows="3" cols="60">한국 경제가 빠르게 성장했다.</textarea>
+<button id="run" disabled>Tokenize</button><pre id="output"></pre>
+<script type="module">
+const worker = new Worker('/static/kiwi-worker.js', {type:'module'});
+const status = document.getElementById('status'), run = document.getElementById('run'), output = document.getElementById('output');
+let id = 0;
+worker.onmessage = event => {
+  if (!event.data.ok) { status.textContent = 'Kiwi failed: ' + event.data.error; return; }
+  if (event.data.tokens) output.textContent = event.data.tokens.map(t => `${t.form}\t${t.tag}\t${t.start}\t${t.len}`).join('\n');
+  else { status.textContent = 'Kiwi ready'; run.disabled = false; run.click(); }
+};
+worker.onerror = event => { status.textContent = 'Kiwi worker failed: ' + event.message; };
+run.onclick = () => worker.postMessage({id:++id,type:'tokenize',text:document.getElementById('input').value});
+worker.postMessage({id:++id,type:'init'});
+</script></html>

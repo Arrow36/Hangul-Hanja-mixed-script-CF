@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+dist/
+*.db
+*.db-*
+*.zip
+*.tgz
+public/model/
+public/static/client.js
+public/static/kiwi-worker.js
+public/static/kiwi-wasm.wasm
+output/
+__pycache__/
+*.pyc
+tests_cf/converter.bundle.mjs
+work-kiwi-model.tgz
+work-main.db

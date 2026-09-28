@@ -1,0 +1,15 @@
+{
+  "name": "hangul-hanja-mixed-script-cf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "python scripts/prepare_kiwi.py",
+    "build": "npm run prepare:assets && esbuild web/client.ts --bundle --format=iife --outfile=public/static/client.js && esbuild web/kiwi-worker.ts --bundle --format=esm --external:node:* --outfile=public/static/kiwi-worker.js && tsc --noEmit",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "test": "esbuild web/converter.ts --bundle --platform=node --format=esm --outfile=tests_cf/converter.bundle.mjs && node --test tests_cf/*.test.mjs",
+    "check": "npm run build && npm test && wrangler deploy --dry-run"
+  },
+  "dependencies": { "kiwi-nlp": "0.24.0" },
+  "devDependencies": { "@cloudflare/workers-types": "5.20260928.1", "esbuild": "^0.25.0", "typescript": "^5.9.0", "wrangler": "^4.0.0" }
+}

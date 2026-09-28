@@ -1,0 +1,6853 @@
+[
+  {
+    "text": "한국 경제가 빠르게 성장했다.",
+    "tokens": [
+      {
+        "form": "한국",
+        "tag": "NNP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "경제",
+        "tag": "NNG",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "가",
+        "tag": "JKS",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "빠르",
+        "tag": "VA",
+        "start": 7,
+        "len": 2
+      },
+      {
+        "form": "게",
+        "tag": "EC",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "성장",
+        "tag": "NNG",
+        "start": 11,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 13,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 13,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 14,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 15,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "성장하": [],
+      "성장": [
+        {
+          "candidate_id": 21250,
+          "entry_id": 49068,
+          "written_form": "성장",
+          "origin_raw": "成長",
+          "replacement": "成長",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제하다": [],
+      "빠르": [],
+      "한국": [
+        {
+          "candidate_id": 3464,
+          "entry_id": 70029,
+          "written_form": "한국",
+          "origin_raw": "韓國",
+          "replacement": "韓國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "빠르다": [],
+      "경제": [
+        {
+          "candidate_id": 7745,
+          "entry_id": 62384,
+          "written_form": "경제",
+          "origin_raw": "經濟",
+          "replacement": "經濟",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제되다": [],
+      "한국되다": [],
+      "한국하다": [],
+      "성장하다": [
+        {
+          "candidate_id": 21257,
+          "entry_id": 49069,
+          "written_form": "성장하다",
+          "origin_raw": "成長하다",
+          "replacement": "成長",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "성장했": [],
+      "성장되다": [
+        {
+          "candidate_id": 21252,
+          "entry_id": 91933,
+          "written_form": "성장되다",
+          "origin_raw": "成長되다",
+          "replacement": "成長",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "韓國 經濟가 빠르게 成長했다.",
+    "python_segments": [
+      {
+        "original": "한국",
+        "display_text": "韓國",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "경제",
+        "display_text": "經濟",
+        "status": "converted"
+      },
+      {
+        "original": "가",
+        "display_text": "가",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "빠르",
+        "display_text": "빠르",
+        "status": "no_match"
+      },
+      {
+        "original": "게",
+        "display_text": "게",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "성장",
+        "display_text": "成長",
+        "status": "converted"
+      },
+      {
+        "original": "했",
+        "display_text": "했",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "대한민국의 경제는 발전하고 있다.",
+    "tokens": [
+      {
+        "form": "대한민국",
+        "tag": "NNP",
+        "start": 0,
+        "len": 4
+      },
+      {
+        "form": "의",
+        "tag": "JKG",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "경제",
+        "tag": "NNG",
+        "start": 6,
+        "len": 2
+      },
+      {
+        "form": "는",
+        "tag": "JX",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "발전",
+        "tag": "NNG",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 12,
+        "len": 1
+      },
+      {
+        "form": "고",
+        "tag": "EC",
+        "start": 13,
+        "len": 1
+      },
+      {
+        "form": "있",
+        "tag": "VX",
+        "start": 15,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 16,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 17,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "대한민국되다": [],
+      "발전하": [],
+      "대한민국하다": [],
+      "경제하다": [],
+      "대한민국": [
+        {
+          "candidate_id": 13347,
+          "entry_id": 70041,
+          "written_form": "대한민국",
+          "origin_raw": "大韓民國",
+          "replacement": "大韓民國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "경제": [
+        {
+          "candidate_id": 7745,
+          "entry_id": 62384,
+          "written_form": "경제",
+          "origin_raw": "經濟",
+          "replacement": "經濟",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제되다": [],
+      "있다": [],
+      "발전하다": [
+        {
+          "candidate_id": 16769,
+          "entry_id": 56083,
+          "written_form": "발전하다",
+          "origin_raw": "發展하다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "있": [],
+      "발전": [
+        {
+          "candidate_id": 16757,
+          "entry_id": 67880,
+          "written_form": "발전",
+          "origin_raw": "發展",
+          "replacement": "發展",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 16758,
+          "entry_id": 15462,
+          "written_form": "발전",
+          "origin_raw": "發電",
+          "replacement": "發電",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "발전되다": [
+        {
+          "candidate_id": 16761,
+          "entry_id": 15871,
+          "written_form": "발전되다",
+          "origin_raw": "發展되다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "大韓民國의 經濟는 發展하고 있다.",
+    "python_segments": [
+      {
+        "original": "대한민국",
+        "display_text": "大韓民國",
+        "status": "converted"
+      },
+      {
+        "original": "의",
+        "display_text": "의",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "경제",
+        "display_text": "經濟",
+        "status": "converted"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "발전",
+        "display_text": "發展",
+        "status": "converted"
+      },
+      {
+        "original": "하",
+        "display_text": "하",
+        "status": "kept"
+      },
+      {
+        "original": "고",
+        "display_text": "고",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "있",
+        "display_text": "있",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "사회와 문화가 변화한다.",
+    "tokens": [
+      {
+        "form": "사회",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "와",
+        "tag": "JC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "문화",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "가",
+        "tag": "JKS",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "변화",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "변화되다": [
+        {
+          "candidate_id": 17632,
+          "entry_id": 14476,
+          "written_form": "변화되다",
+          "origin_raw": "變化되다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "변화": [
+        {
+          "candidate_id": 17631,
+          "entry_id": 83169,
+          "written_form": "변화",
+          "origin_raw": "變化",
+          "replacement": "變化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "사회": [
+        {
+          "candidate_id": 19772,
+          "entry_id": 91918,
+          "written_form": "사회",
+          "origin_raw": "司會",
+          "replacement": "司會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19773,
+          "entry_id": 62378,
+          "written_form": "사회",
+          "origin_raw": "社會",
+          "replacement": "社會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ],
+      "사회하다": [],
+      "문화하다": [],
+      "변화한": [],
+      "사회되다": [],
+      "문화": [
+        {
+          "candidate_id": 15902,
+          "entry_id": 71460,
+          "written_form": "문화",
+          "origin_raw": "文化",
+          "replacement": "文化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "문화되다": [],
+      "변화하다": [
+        {
+          "candidate_id": 17637,
+          "entry_id": 65536,
+          "written_form": "변화하다",
+          "origin_raw": "變化하다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "변화하": []
+    },
+    "python_display": "사회와 文化가 變化한다.",
+    "python_segments": [
+      {
+        "original": "사회",
+        "display_text": "사회",
+        "status": "ambiguous"
+      },
+      {
+        "original": "와",
+        "display_text": "와",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "문화",
+        "display_text": "文化",
+        "status": "converted"
+      },
+      {
+        "original": "가",
+        "display_text": "가",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "변화",
+        "display_text": "變化",
+        "status": "converted"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "학교에서 학생이 공부한다.",
+    "tokens": [
+      {
+        "form": "학교",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "에서",
+        "tag": "JKB",
+        "start": 2,
+        "len": 2
+      },
+      {
+        "form": "학생",
+        "tag": "NNG",
+        "start": 5,
+        "len": 2
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": "공부",
+        "tag": "NNG",
+        "start": 9,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 11,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 11,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 13,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "학생": [
+        {
+          "candidate_id": 3408,
+          "entry_id": 31670,
+          "written_form": "학생",
+          "origin_raw": "學生",
+          "replacement": "學生",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "공부한": [],
+      "학생되다": [],
+      "학생하다": [],
+      "공부하다": [
+        {
+          "candidate_id": 8658,
+          "entry_id": 23394,
+          "written_form": "공부하다",
+          "origin_raw": "工夫하다",
+          "replacement": "工夫",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "학교하다": [],
+      "공부": [
+        {
+          "candidate_id": 8655,
+          "entry_id": 36672,
+          "written_form": "공부",
+          "origin_raw": "工夫",
+          "replacement": "工夫",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "공부되다": [],
+      "공부하": [],
+      "학교되다": [],
+      "학교": [
+        {
+          "candidate_id": 3366,
+          "entry_id": 73276,
+          "written_form": "학교",
+          "origin_raw": "學校",
+          "replacement": "學校",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "學校에서 學生이 工夫한다.",
+    "python_segments": [
+      {
+        "original": "학교",
+        "display_text": "學校",
+        "status": "converted"
+      },
+      {
+        "original": "에서",
+        "display_text": "에서",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "학생",
+        "display_text": "學生",
+        "status": "converted"
+      },
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "공부",
+        "display_text": "工夫",
+        "status": "converted"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "국제 관계를 연구한다.",
+    "tokens": [
+      {
+        "form": "국제",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "관계",
+        "tag": "NNG",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "연구",
+        "tag": "NNG",
+        "start": 7,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 9,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "국제하다": [],
+      "연구되다": [
+        {
+          "candidate_id": 24912,
+          "entry_id": 67440,
+          "written_form": "연구되다",
+          "origin_raw": "硏究되다",
+          "replacement": "硏究",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "관계하다": [
+        {
+          "candidate_id": 9110,
+          "entry_id": 22371,
+          "written_form": "관계하다",
+          "origin_raw": "關係하다",
+          "replacement": "關係",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "관계되다": [
+        {
+          "candidate_id": 9105,
+          "entry_id": 23968,
+          "written_form": "관계되다",
+          "origin_raw": "關係되다",
+          "replacement": "關係",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "연구한": [],
+      "국제": [
+        {
+          "candidate_id": 10092,
+          "entry_id": 58597,
+          "written_form": "국제",
+          "origin_raw": "國際",
+          "replacement": "國際",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "연구하다": [
+        {
+          "candidate_id": 24923,
+          "entry_id": 58171,
+          "written_form": "연구하다",
+          "origin_raw": "硏究하다",
+          "replacement": "硏究",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "연구하": [],
+      "국제되다": [],
+      "관계": [
+        {
+          "candidate_id": 9102,
+          "entry_id": 88319,
+          "written_form": "관계",
+          "origin_raw": "官界",
+          "replacement": "官界",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 9103,
+          "entry_id": 21898,
+          "written_form": "관계",
+          "origin_raw": "關係",
+          "replacement": "關係",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        }
+      ],
+      "연구": [
+        {
+          "candidate_id": 24911,
+          "entry_id": 62879,
+          "written_form": "연구",
+          "origin_raw": "硏究",
+          "replacement": "硏究",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "國際 관계를 硏究한다.",
+    "python_segments": [
+      {
+        "original": "국제",
+        "display_text": "國際",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "관계",
+        "display_text": "관계",
+        "status": "ambiguous"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "연구",
+        "display_text": "硏究",
+        "status": "converted"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "정치와 경제를 논의했다.",
+    "tokens": [
+      {
+        "form": "정치",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "와",
+        "tag": "JC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "경제",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "논의",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 11,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "논의하": [],
+      "논의했": [],
+      "논의하다": [
+        {
+          "candidate_id": 12220,
+          "entry_id": 64501,
+          "written_form": "논의하다",
+          "origin_raw": "論議하다",
+          "replacement": "論議",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "정치": [
+        {
+          "candidate_id": 31135,
+          "entry_id": 70890,
+          "written_form": "정치",
+          "origin_raw": "政治",
+          "replacement": "政治",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제하다": [],
+      "논의되다": [
+        {
+          "candidate_id": 12219,
+          "entry_id": 40823,
+          "written_form": "논의되다",
+          "origin_raw": "論議되다",
+          "replacement": "論議",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "논의": [
+        {
+          "candidate_id": 12218,
+          "entry_id": 40824,
+          "written_form": "논의",
+          "origin_raw": "論議",
+          "replacement": "論議",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제": [
+        {
+          "candidate_id": 7745,
+          "entry_id": 62384,
+          "written_form": "경제",
+          "origin_raw": "經濟",
+          "replacement": "經濟",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제되다": [],
+      "정치되다": [],
+      "정치하다": [
+        {
+          "candidate_id": 31150,
+          "entry_id": 75646,
+          "written_form": "정치하다",
+          "origin_raw": "政治하다",
+          "replacement": "政治",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "政治와 經濟를 論議했다.",
+    "python_segments": [
+      {
+        "original": "정치",
+        "display_text": "政治",
+        "status": "converted"
+      },
+      {
+        "original": "와",
+        "display_text": "와",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "경제",
+        "display_text": "經濟",
+        "status": "converted"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "논의",
+        "display_text": "論議",
+        "status": "converted"
+      },
+      {
+        "original": "했",
+        "display_text": "했",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "서울은 한국의 수도이다.",
+    "tokens": [
+      {
+        "form": "서울",
+        "tag": "NNP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "은",
+        "tag": "JX",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "한국",
+        "tag": "NNP",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "의",
+        "tag": "JKG",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "수도",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "이",
+        "tag": "VCP",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 11,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "서울하다": [],
+      "서울": [],
+      "수도되다": [],
+      "한국": [
+        {
+          "candidate_id": 3464,
+          "entry_id": 70029,
+          "written_form": "한국",
+          "origin_raw": "韓國",
+          "replacement": "韓國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "한국되다": [],
+      "한국하다": [],
+      "수도": [
+        {
+          "candidate_id": 22102,
+          "entry_id": 64647,
+          "written_form": "수도",
+          "origin_raw": "水道",
+          "replacement": "水道",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 22103,
+          "entry_id": 15622,
+          "written_form": "수도",
+          "origin_raw": "首都",
+          "replacement": "首都",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 22104,
+          "entry_id": 64560,
+          "written_form": "수도",
+          "origin_raw": "修道",
+          "replacement": "修道",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "서울되다": [],
+      "수도하다": [
+        {
+          "candidate_id": 22113,
+          "entry_id": 64561,
+          "written_form": "수도하다",
+          "origin_raw": "修道하다",
+          "replacement": "修道",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "이다": [],
+      "수도이": [],
+      "이": [
+        {
+          "candidate_id": 27839,
+          "entry_id": 71125,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 8
+        },
+        {
+          "candidate_id": 27840,
+          "entry_id": 71127,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 9
+        }
+      ]
+    },
+    "python_display": "서울은 韓國의 수도이다.",
+    "python_segments": [
+      {
+        "original": "서울",
+        "display_text": "서울",
+        "status": "no_match"
+      },
+      {
+        "original": "은",
+        "display_text": "은",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "한국",
+        "display_text": "韓國",
+        "status": "converted"
+      },
+      {
+        "original": "의",
+        "display_text": "의",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "수도",
+        "display_text": "수도",
+        "status": "ambiguous"
+      },
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "부산에서 기차를 탔다.",
+    "tokens": [
+      {
+        "form": "부산",
+        "tag": "NNP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "에서",
+        "tag": "JKB",
+        "start": 2,
+        "len": 2
+      },
+      {
+        "form": "기차",
+        "tag": "NNG",
+        "start": 5,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": "타",
+        "tag": "VV",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "타다": [],
+      "타": [
+        {
+          "candidate_id": 1426,
+          "entry_id": 79435,
+          "written_form": "타",
+          "origin_raw": "他",
+          "replacement": "他",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 1427,
+          "entry_id": 79437,
+          "written_form": "타",
+          "origin_raw": "打",
+          "replacement": "打",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 1428,
+          "entry_id": 79436,
+          "written_form": "타",
+          "origin_raw": "他",
+          "replacement": "他",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "부산하다": [],
+      "부산되다": [],
+      "기차하다": [],
+      "기차되다": [],
+      "기차": [
+        {
+          "candidate_id": 11271,
+          "entry_id": 60632,
+          "written_form": "기차",
+          "origin_raw": "汽車",
+          "replacement": "汽車",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "부산": [
+        {
+          "candidate_id": 18379,
+          "entry_id": 68895,
+          "written_form": "부산",
+          "origin_raw": "釜山",
+          "replacement": "釜山",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 2
+        }
+      ]
+    },
+    "python_display": "釜山에서 汽車를 탔다.",
+    "python_segments": [
+      {
+        "original": "부산",
+        "display_text": "釜山",
+        "status": "converted"
+      },
+      {
+        "original": "에서",
+        "display_text": "에서",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "기차",
+        "display_text": "汽車",
+        "status": "converted"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "탔",
+        "display_text": "탔",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "사과를 먹었다.",
+    "tokens": [
+      {
+        "form": "사과",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "먹",
+        "tag": "VV",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 7,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "사과": [
+        {
+          "candidate_id": 19409,
+          "entry_id": 66371,
+          "written_form": "사과",
+          "origin_raw": "沙果/砂果",
+          "replacement": "沙果",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19410,
+          "entry_id": 15830,
+          "written_form": "사과",
+          "origin_raw": "謝過",
+          "replacement": "謝過",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ],
+      "먹다": [],
+      "사과하다": [
+        {
+          "candidate_id": 19414,
+          "entry_id": 62377,
+          "written_form": "사과하다",
+          "origin_raw": "謝過하다",
+          "replacement": "謝過",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "먹": [],
+      "사과되다": []
+    },
+    "python_display": "사과를 먹었다.",
+    "python_segments": [
+      {
+        "original": "사과",
+        "display_text": "사과",
+        "status": "ambiguous"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "먹",
+        "display_text": "먹",
+        "status": "no_match"
+      },
+      {
+        "original": "었",
+        "display_text": "었",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "배를 탔다.",
+    "tokens": [
+      {
+        "form": "배",
+        "tag": "NNG",
+        "start": 0,
+        "len": 1
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 1,
+        "len": 1
+      },
+      {
+        "form": "타",
+        "tag": "VV",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 5,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "타다": [],
+      "타": [
+        {
+          "candidate_id": 1426,
+          "entry_id": 79435,
+          "written_form": "타",
+          "origin_raw": "他",
+          "replacement": "他",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 1427,
+          "entry_id": 79437,
+          "written_form": "타",
+          "origin_raw": "打",
+          "replacement": "打",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 1428,
+          "entry_id": 79436,
+          "written_form": "타",
+          "origin_raw": "他",
+          "replacement": "他",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "배": [
+        {
+          "candidate_id": 17055,
+          "entry_id": 74950,
+          "written_form": "배",
+          "origin_raw": "輩",
+          "replacement": "輩",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        },
+        {
+          "candidate_id": 17056,
+          "entry_id": 15901,
+          "written_form": "배",
+          "origin_raw": "倍",
+          "replacement": "倍",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 17057,
+          "entry_id": 58079,
+          "written_form": "배",
+          "origin_raw": "杯",
+          "replacement": "杯",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 5
+        }
+      ],
+      "배하다": [],
+      "배되다": []
+    },
+    "python_display": "倍를 탔다.",
+    "python_segments": [
+      {
+        "original": "배",
+        "display_text": "倍",
+        "status": "converted"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "탔",
+        "display_text": "탔",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "눈이 내린다.",
+    "tokens": [
+      {
+        "form": "눈",
+        "tag": "NNG",
+        "start": 0,
+        "len": 1
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "start": 1,
+        "len": 1
+      },
+      {
+        "form": "내리",
+        "tag": "VV",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 6,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "내리다": [],
+      "내리": [],
+      "눈": [],
+      "눈되다": [],
+      "눈하다": []
+    },
+    "python_display": "눈이 내린다.",
+    "python_segments": [
+      {
+        "original": "눈",
+        "display_text": "눈",
+        "status": "no_match"
+      },
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "내린",
+        "display_text": "내린",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "은행에 갔다.",
+    "tokens": [
+      {
+        "form": "은행",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "에",
+        "tag": "JKB",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "가",
+        "tag": "VV",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 6,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "가": [
+        {
+          "candidate_id": 5676,
+          "entry_id": 72337,
+          "written_form": "가",
+          "origin_raw": "哥",
+          "replacement": "哥",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 5677,
+          "entry_id": 72340,
+          "written_form": "가",
+          "origin_raw": "假",
+          "replacement": "假",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 5678,
+          "entry_id": 27741,
+          "written_form": "가",
+          "origin_raw": "可",
+          "replacement": "可",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 5679,
+          "entry_id": 72338,
+          "written_form": "가",
+          "origin_raw": "家",
+          "replacement": "家",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 5680,
+          "entry_id": 72339,
+          "written_form": "가",
+          "origin_raw": "家",
+          "replacement": "家",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 5681,
+          "entry_id": 72341,
+          "written_form": "가",
+          "origin_raw": "街",
+          "replacement": "街",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 5682,
+          "entry_id": 72342,
+          "written_form": "가",
+          "origin_raw": "歌",
+          "replacement": "歌",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 5
+        },
+        {
+          "candidate_id": 5683,
+          "entry_id": 72343,
+          "written_form": "가",
+          "origin_raw": "價",
+          "replacement": "價",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 6
+        }
+      ],
+      "은행되다": [],
+      "가다": [],
+      "은행하다": [],
+      "은행": [
+        {
+          "candidate_id": 27492,
+          "entry_id": 71109,
+          "written_form": "은행",
+          "origin_raw": "銀行",
+          "replacement": "銀行",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 27493,
+          "entry_id": 71726,
+          "written_form": "은행",
+          "origin_raw": "銀杏",
+          "replacement": "銀杏",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ]
+    },
+    "python_display": "은행에 갔다.",
+    "python_segments": [
+      {
+        "original": "은행",
+        "display_text": "은행",
+        "status": "ambiguous"
+      },
+      {
+        "original": "에",
+        "display_text": "에",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "갔",
+        "display_text": "갔",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "발전하는 도시",
+    "tokens": [
+      {
+        "form": "발전",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "는",
+        "tag": "ETM",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "도시",
+        "tag": "NNG",
+        "start": 5,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "발전하": [],
+      "도시되다": [],
+      "발전하다": [
+        {
+          "candidate_id": 16769,
+          "entry_id": 56083,
+          "written_form": "발전하다",
+          "origin_raw": "發展하다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "도시": [
+        {
+          "candidate_id": 13525,
+          "entry_id": 70743,
+          "written_form": "도시",
+          "origin_raw": "都市",
+          "replacement": "都市",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "도시하다": [
+        {
+          "candidate_id": 13532,
+          "entry_id": 47606,
+          "written_form": "도시하다",
+          "origin_raw": "圖示하다",
+          "replacement": "圖示",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "발전": [
+        {
+          "candidate_id": 16757,
+          "entry_id": 67880,
+          "written_form": "발전",
+          "origin_raw": "發展",
+          "replacement": "發展",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 16758,
+          "entry_id": 15462,
+          "written_form": "발전",
+          "origin_raw": "發電",
+          "replacement": "發電",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "발전되다": [
+        {
+          "candidate_id": 16761,
+          "entry_id": 15871,
+          "written_form": "발전되다",
+          "origin_raw": "發展되다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "발전하는 都市",
+    "python_segments": [
+      {
+        "original": "발전",
+        "display_text": "발전",
+        "status": "ambiguous"
+      },
+      {
+        "original": "하",
+        "display_text": "하",
+        "status": "kept"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "도시",
+        "display_text": "都市",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "변화된 사회",
+    "tokens": [
+      {
+        "form": "변화",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "되",
+        "tag": "XSV",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "ᆫ",
+        "tag": "ETM",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "사회",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "변화되다": [
+        {
+          "candidate_id": 17632,
+          "entry_id": 14476,
+          "written_form": "변화되다",
+          "origin_raw": "變化되다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "변화": [
+        {
+          "candidate_id": 17631,
+          "entry_id": 83169,
+          "written_form": "변화",
+          "origin_raw": "變化",
+          "replacement": "變化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "변화되": [],
+      "사회": [
+        {
+          "candidate_id": 19772,
+          "entry_id": 91918,
+          "written_form": "사회",
+          "origin_raw": "司會",
+          "replacement": "司會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19773,
+          "entry_id": 62378,
+          "written_form": "사회",
+          "origin_raw": "社會",
+          "replacement": "社會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ],
+      "사회하다": [],
+      "변화된": [],
+      "사회되다": [],
+      "변화하다": [
+        {
+          "candidate_id": 17637,
+          "entry_id": 65536,
+          "written_form": "변화하다",
+          "origin_raw": "變化하다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "變化된 사회",
+    "python_segments": [
+      {
+        "original": "변화",
+        "display_text": "變化",
+        "status": "converted"
+      },
+      {
+        "original": "된",
+        "display_text": "된",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "사회",
+        "display_text": "사회",
+        "status": "ambiguous"
+      }
+    ]
+  },
+  {
+    "text": "공부하고 있다.",
+    "tokens": [
+      {
+        "form": "공부",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "고",
+        "tag": "EC",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "있",
+        "tag": "VX",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 7,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "공부하다": [
+        {
+          "candidate_id": 8658,
+          "entry_id": 23394,
+          "written_form": "공부하다",
+          "origin_raw": "工夫하다",
+          "replacement": "工夫",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "있": [],
+      "있다": [],
+      "공부": [
+        {
+          "candidate_id": 8655,
+          "entry_id": 36672,
+          "written_form": "공부",
+          "origin_raw": "工夫",
+          "replacement": "工夫",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "공부되다": [],
+      "공부하": []
+    },
+    "python_display": "工夫하고 있다.",
+    "python_segments": [
+      {
+        "original": "공부",
+        "display_text": "工夫",
+        "status": "converted"
+      },
+      {
+        "original": "하",
+        "display_text": "하",
+        "status": "kept"
+      },
+      {
+        "original": "고",
+        "display_text": "고",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "있",
+        "display_text": "있",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "아름다운 꽃이 피었다.",
+    "tokens": [
+      {
+        "form": "아름답",
+        "tag": "VA-I",
+        "start": 0,
+        "len": 4
+      },
+      {
+        "form": "은",
+        "tag": "ETM",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "꽃",
+        "tag": "NNG",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "피",
+        "tag": "VV",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "피": [
+        {
+          "candidate_id": 3110,
+          "entry_id": 88466,
+          "written_form": "피",
+          "origin_raw": "被",
+          "replacement": "被",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "피다": [],
+      "꽃하다": [],
+      "꽃": [],
+      "꽃되다": []
+    },
+    "python_display": "아름다운 꽃이 피었다.",
+    "python_segments": [
+      {
+        "original": "아름다운",
+        "display_text": "아름다운",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "꽃",
+        "display_text": "꽃",
+        "status": "no_match"
+      },
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "피",
+        "display_text": "피",
+        "status": "ambiguous"
+      },
+      {
+        "original": "었",
+        "display_text": "었",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "빠르게 달리는 사람",
+    "tokens": [
+      {
+        "form": "빠르",
+        "tag": "VA",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "게",
+        "tag": "EC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "달리",
+        "tag": "VV",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "는",
+        "tag": "ETM",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "사람",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "사람": [],
+      "달리다": [],
+      "빠르": [],
+      "빠르다": [],
+      "사람하다": [],
+      "사람되다": [],
+      "달리": []
+    },
+    "python_display": "빠르게 달리는 사람",
+    "python_segments": [
+      {
+        "original": "빠르",
+        "display_text": "빠르",
+        "status": "no_match"
+      },
+      {
+        "original": "게",
+        "display_text": "게",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "달리",
+        "display_text": "달리",
+        "status": "no_match"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "사람",
+        "display_text": "사람",
+        "status": "no_match"
+      }
+    ]
+  },
+  {
+    "text": "새로운 기술을 개발한다.",
+    "tokens": [
+      {
+        "form": "새롭",
+        "tag": "VA-I",
+        "start": 0,
+        "len": 3
+      },
+      {
+        "form": "은",
+        "tag": "ETM",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "기술",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "을",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "개발",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "기술": [
+        {
+          "candidate_id": 11135,
+          "entry_id": 73355,
+          "written_form": "기술",
+          "origin_raw": "技術",
+          "replacement": "技術",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 11136,
+          "entry_id": 38346,
+          "written_form": "기술",
+          "origin_raw": "記述",
+          "replacement": "記述",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "개발한": [],
+      "개발하다": [
+        {
+          "candidate_id": 6689,
+          "entry_id": 62257,
+          "written_form": "개발하다",
+          "origin_raw": "開發하다",
+          "replacement": "開發",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "개발": [
+        {
+          "candidate_id": 6684,
+          "entry_id": 23460,
+          "written_form": "개발",
+          "origin_raw": "開發",
+          "replacement": "開發",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "기술하다": [
+        {
+          "candidate_id": 11145,
+          "entry_id": 32512,
+          "written_form": "기술하다",
+          "origin_raw": "記述하다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "기술되다": [
+        {
+          "candidate_id": 11138,
+          "entry_id": 38349,
+          "written_form": "기술되다",
+          "origin_raw": "記述되다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "개발하": [],
+      "개발되다": [
+        {
+          "candidate_id": 6686,
+          "entry_id": 15747,
+          "written_form": "개발되다",
+          "origin_raw": "開發되다",
+          "replacement": "開發",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "새로운 기술을 開發한다.",
+    "python_segments": [
+      {
+        "original": "새로운",
+        "display_text": "새로운",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "기술",
+        "display_text": "기술",
+        "status": "ambiguous"
+      },
+      {
+        "original": "을",
+        "display_text": "을",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "개발",
+        "display_text": "開發",
+        "status": "converted"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "그는 책을 읽었다.",
+    "tokens": [
+      {
+        "form": "그",
+        "tag": "NP",
+        "start": 0,
+        "len": 1
+      },
+      {
+        "form": "는",
+        "tag": "JX",
+        "start": 1,
+        "len": 1
+      },
+      {
+        "form": "책",
+        "tag": "NNG",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "을",
+        "tag": "JKO",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "읽",
+        "tag": "VV",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 9,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "책": [
+        {
+          "candidate_id": 33844,
+          "entry_id": 71468,
+          "written_form": "책",
+          "origin_raw": "冊",
+          "replacement": "冊",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        },
+        {
+          "candidate_id": 33845,
+          "entry_id": 88696,
+          "written_form": "책",
+          "origin_raw": "責",
+          "replacement": "責",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 33846,
+          "entry_id": 88697,
+          "written_form": "책",
+          "origin_raw": "策",
+          "replacement": "策",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "읽다": [],
+      "그되다": [],
+      "그하다": [],
+      "책하다": [
+        {
+          "candidate_id": 33878,
+          "entry_id": 78701,
+          "written_form": "책하다",
+          "origin_raw": "責하다",
+          "replacement": "責",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "읽": [],
+      "책되다": [],
+      "그": []
+    },
+    "python_display": "그는 冊을 읽었다.",
+    "python_segments": [
+      {
+        "original": "그",
+        "display_text": "그",
+        "status": "no_match"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "책",
+        "display_text": "冊",
+        "status": "converted"
+      },
+      {
+        "original": "을",
+        "display_text": "을",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "읽",
+        "display_text": "읽",
+        "status": "no_match"
+      },
+      {
+        "original": "었",
+        "display_text": "었",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "그녀가 음악을 들었다.",
+    "tokens": [
+      {
+        "form": "그녀",
+        "tag": "NP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "가",
+        "tag": "JKS",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "음악",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "을",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "듣",
+        "tag": "VV-I",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "었",
+        "tag": "EP",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "음악되다": [],
+      "음악": [
+        {
+          "candidate_id": 27548,
+          "entry_id": 71115,
+          "written_form": "음악",
+          "origin_raw": "音樂",
+          "replacement": "音樂",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "그녀되다": [],
+      "음악하다": [],
+      "그녀": [
+        {
+          "candidate_id": 10473,
+          "entry_id": 36246,
+          "written_form": "그녀",
+          "origin_raw": "그女",
+          "replacement": "그女",
+          "replacement_type": "mixed",
+          "is_reliable": 0,
+          "part_of_speech": "대명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "그녀하다": []
+    },
+    "python_display": "그녀가 音樂을 들었다.",
+    "python_segments": [
+      {
+        "original": "그녀",
+        "display_text": "그녀",
+        "status": "ambiguous"
+      },
+      {
+        "original": "가",
+        "display_text": "가",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "음악",
+        "display_text": "音樂",
+        "status": "converted"
+      },
+      {
+        "original": "을",
+        "display_text": "을",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "들",
+        "display_text": "들",
+        "status": "kept"
+      },
+      {
+        "original": "었",
+        "display_text": "었",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "나는 집에 간다.",
+    "tokens": [
+      {
+        "form": "나",
+        "tag": "NP",
+        "start": 0,
+        "len": 1
+      },
+      {
+        "form": "는",
+        "tag": "JX",
+        "start": 1,
+        "len": 1
+      },
+      {
+        "form": "집",
+        "tag": "NNG",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "에",
+        "tag": "JKB",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "가",
+        "tag": "VV",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 6,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 8,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "나": [],
+      "가": [
+        {
+          "candidate_id": 5676,
+          "entry_id": 72337,
+          "written_form": "가",
+          "origin_raw": "哥",
+          "replacement": "哥",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 5677,
+          "entry_id": 72340,
+          "written_form": "가",
+          "origin_raw": "假",
+          "replacement": "假",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 5678,
+          "entry_id": 27741,
+          "written_form": "가",
+          "origin_raw": "可",
+          "replacement": "可",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 5679,
+          "entry_id": 72338,
+          "written_form": "가",
+          "origin_raw": "家",
+          "replacement": "家",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 5680,
+          "entry_id": 72339,
+          "written_form": "가",
+          "origin_raw": "家",
+          "replacement": "家",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 5681,
+          "entry_id": 72341,
+          "written_form": "가",
+          "origin_raw": "街",
+          "replacement": "街",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 5682,
+          "entry_id": 72342,
+          "written_form": "가",
+          "origin_raw": "歌",
+          "replacement": "歌",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 5
+        },
+        {
+          "candidate_id": 5683,
+          "entry_id": 72343,
+          "written_form": "가",
+          "origin_raw": "價",
+          "replacement": "價",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 6
+        }
+      ],
+      "집": [
+        {
+          "candidate_id": 33356,
+          "entry_id": 78367,
+          "written_form": "집",
+          "origin_raw": "輯",
+          "replacement": "輯",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 33357,
+          "entry_id": 88683,
+          "written_form": "집",
+          "origin_raw": "集",
+          "replacement": "集",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "가다": [],
+      "나되다": [],
+      "나하다": [],
+      "집하다": [],
+      "집되다": []
+    },
+    "python_display": "나는 집에 간다.",
+    "python_segments": [
+      {
+        "original": "나",
+        "display_text": "나",
+        "status": "no_match"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "집",
+        "display_text": "집",
+        "status": "ambiguous"
+      },
+      {
+        "original": "에",
+        "display_text": "에",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "간",
+        "display_text": "간",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "우리는 영화를 본다.",
+    "tokens": [
+      {
+        "form": "우리",
+        "tag": "NP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "는",
+        "tag": "JX",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "영화",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "보",
+        "tag": "VV",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 10,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "우리": [],
+      "영화하다": [],
+      "우리하다": [],
+      "영화": [
+        {
+          "candidate_id": 25430,
+          "entry_id": 71624,
+          "written_form": "영화",
+          "origin_raw": "映畫",
+          "replacement": "映畫",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 25431,
+          "entry_id": 68541,
+          "written_form": "영화",
+          "origin_raw": "榮華",
+          "replacement": "榮華",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "보": [
+        {
+          "candidate_id": 17781,
+          "entry_id": 64468,
+          "written_form": "보",
+          "origin_raw": "洑",
+          "replacement": "洑",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 17782,
+          "entry_id": 59356,
+          "written_form": "보",
+          "origin_raw": "褓",
+          "replacement": "褓",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 17783,
+          "entry_id": 59352,
+          "written_form": "보",
+          "origin_raw": "步",
+          "replacement": "步",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 17784,
+          "entry_id": 70325,
+          "written_form": "보",
+          "origin_raw": "補",
+          "replacement": "補",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "보다": [],
+      "우리되다": [],
+      "영화되다": []
+    },
+    "python_display": "우리는 영화를 본다.",
+    "python_segments": [
+      {
+        "original": "우리",
+        "display_text": "우리",
+        "status": "no_match"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "영화",
+        "display_text": "영화",
+        "status": "ambiguous"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "본",
+        "display_text": "본",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "한국의 역사와 전통",
+    "tokens": [
+      {
+        "form": "한국",
+        "tag": "NNP",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "의",
+        "tag": "JKG",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "역사",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "와",
+        "tag": "JC",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "전통",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "역사되다": [],
+      "한국": [
+        {
+          "candidate_id": 3464,
+          "entry_id": 70029,
+          "written_form": "한국",
+          "origin_raw": "韓國",
+          "replacement": "韓國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "전통": [
+        {
+          "candidate_id": 30525,
+          "entry_id": 70841,
+          "written_form": "전통",
+          "origin_raw": "傳統",
+          "replacement": "傳統",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "역사하다": [],
+      "한국되다": [],
+      "한국하다": [],
+      "역사": [
+        {
+          "candidate_id": 24818,
+          "entry_id": 62515,
+          "written_form": "역사",
+          "origin_raw": "歷史",
+          "replacement": "歷史",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        }
+      ],
+      "전통하다": [],
+      "전통되다": []
+    },
+    "python_display": "韓國의 歷史와 傳統",
+    "python_segments": [
+      {
+        "original": "한국",
+        "display_text": "韓國",
+        "status": "converted"
+      },
+      {
+        "original": "의",
+        "display_text": "의",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "역사",
+        "display_text": "歷史",
+        "status": "converted"
+      },
+      {
+        "original": "와",
+        "display_text": "와",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "전통",
+        "display_text": "傳統",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "경제 성장과 사회 발전",
+    "tokens": [
+      {
+        "form": "경제",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "성장",
+        "tag": "NNG",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "사회",
+        "tag": "NNG",
+        "start": 7,
+        "len": 2
+      },
+      {
+        "form": "발전",
+        "tag": "NNG",
+        "start": 10,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "성장": [
+        {
+          "candidate_id": 21250,
+          "entry_id": 49068,
+          "written_form": "성장",
+          "origin_raw": "成長",
+          "replacement": "成長",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제하다": [],
+      "사회": [
+        {
+          "candidate_id": 19772,
+          "entry_id": 91918,
+          "written_form": "사회",
+          "origin_raw": "司會",
+          "replacement": "司會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19773,
+          "entry_id": 62378,
+          "written_form": "사회",
+          "origin_raw": "社會",
+          "replacement": "社會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ],
+      "사회하다": [],
+      "경제": [
+        {
+          "candidate_id": 7745,
+          "entry_id": 62384,
+          "written_form": "경제",
+          "origin_raw": "經濟",
+          "replacement": "經濟",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "경제되다": [],
+      "발전하다": [
+        {
+          "candidate_id": 16769,
+          "entry_id": 56083,
+          "written_form": "발전하다",
+          "origin_raw": "發展하다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "사회되다": [],
+      "성장하다": [
+        {
+          "candidate_id": 21257,
+          "entry_id": 49069,
+          "written_form": "성장하다",
+          "origin_raw": "成長하다",
+          "replacement": "成長",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "발전": [
+        {
+          "candidate_id": 16757,
+          "entry_id": 67880,
+          "written_form": "발전",
+          "origin_raw": "發展",
+          "replacement": "發展",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 16758,
+          "entry_id": 15462,
+          "written_form": "발전",
+          "origin_raw": "發電",
+          "replacement": "發電",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "발전되다": [
+        {
+          "candidate_id": 16761,
+          "entry_id": 15871,
+          "written_form": "발전되다",
+          "origin_raw": "發展되다",
+          "replacement": "發展",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "성장되다": [
+        {
+          "candidate_id": 21252,
+          "entry_id": 91933,
+          "written_form": "성장되다",
+          "origin_raw": "成長되다",
+          "replacement": "成長",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "經濟 成長과 사회 發展",
+    "python_segments": [
+      {
+        "original": "경제",
+        "display_text": "經濟",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "성장",
+        "display_text": "成長",
+        "status": "converted"
+      },
+      {
+        "original": "과",
+        "display_text": "과",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "사회",
+        "display_text": "사회",
+        "status": "ambiguous"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "발전",
+        "display_text": "發展",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "안녕하세요!",
+    "tokens": [
+      {
+        "form": "안녕",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSA",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "세요",
+        "tag": "EF",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "!",
+        "tag": "SF",
+        "start": 5,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "안녕되다": [],
+      "안녕하다": [
+        {
+          "candidate_id": 23928,
+          "entry_id": 72523,
+          "written_form": "안녕하다",
+          "origin_raw": "安寧하다",
+          "replacement": "安寧",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "형용사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "안녕": [
+        {
+          "candidate_id": 23926,
+          "entry_id": 17296,
+          "written_form": "안녕",
+          "origin_raw": "安寧",
+          "replacement": "安寧",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 23927,
+          "entry_id": 17298,
+          "written_form": "안녕",
+          "origin_raw": "安寧",
+          "replacement": "安寧",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "감탄사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        }
+      ],
+      "안녕하": []
+    },
+    "python_display": "安寧하세요!",
+    "python_segments": [
+      {
+        "original": "안녕",
+        "display_text": "安寧",
+        "status": "converted"
+      },
+      {
+        "original": "하",
+        "display_text": "하",
+        "status": "kept"
+      },
+      {
+        "original": "세요",
+        "display_text": "세요",
+        "status": "kept"
+      },
+      {
+        "original": "!",
+        "display_text": "!",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "무슨 일입니까?",
+    "tokens": [
+      {
+        "form": "무슨",
+        "tag": "MM",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "일",
+        "tag": "NNG",
+        "start": 3,
+        "len": 1
+      },
+      {
+        "form": "이",
+        "tag": "VCP",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "ᆸ니까",
+        "tag": "EF",
+        "start": 4,
+        "len": 3
+      },
+      {
+        "form": "?",
+        "tag": "SF",
+        "start": 7,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "일이": [],
+      "일하다": [],
+      "이다": [],
+      "일되다": [],
+      "일입": [],
+      "이": [
+        {
+          "candidate_id": 27839,
+          "entry_id": 71125,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 8
+        },
+        {
+          "candidate_id": 27840,
+          "entry_id": 71127,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 9
+        }
+      ],
+      "일": [
+        {
+          "candidate_id": 28446,
+          "entry_id": 88931,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 28447,
+          "entry_id": 72294,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 28448,
+          "entry_id": 89863,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 28449,
+          "entry_id": 62598,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 28450,
+          "entry_id": 31523,
+          "written_form": "일",
+          "origin_raw": "一/壹",
+          "replacement": "一",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 5
+        },
+        {
+          "candidate_id": 28451,
+          "entry_id": 31528,
+          "written_form": "일",
+          "origin_raw": "一/壹",
+          "replacement": "一",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 6
+        }
+      ]
+    },
+    "python_display": "무슨 日입니까?",
+    "python_segments": [
+      {
+        "original": "무슨",
+        "display_text": "무슨",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "일",
+        "display_text": "日",
+        "status": "converted"
+      },
+      {
+        "original": "입",
+        "display_text": "입",
+        "status": "ambiguous"
+      },
+      {
+        "original": "니까",
+        "display_text": "니까",
+        "status": "kept"
+      },
+      {
+        "original": "?",
+        "display_text": "?",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "오늘은 날씨가 좋다.",
+    "tokens": [
+      {
+        "form": "오늘",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "은",
+        "tag": "JX",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "날씨",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "가",
+        "tag": "JKS",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "좋",
+        "tag": "VA",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 10,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "날씨되다": [],
+      "날씨": [],
+      "오늘": [],
+      "좋": [],
+      "오늘하다": [],
+      "좋다": [],
+      "날씨하다": [],
+      "오늘되다": []
+    },
+    "python_display": "오늘은 날씨가 좋다.",
+    "python_segments": [
+      {
+        "original": "오늘",
+        "display_text": "오늘",
+        "status": "no_match"
+      },
+      {
+        "original": "은",
+        "display_text": "은",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "날씨",
+        "display_text": "날씨",
+        "status": "no_match"
+      },
+      {
+        "original": "가",
+        "display_text": "가",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "좋",
+        "display_text": "좋",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "2026년 9월 19일",
+    "tokens": [
+      {
+        "form": "2026",
+        "tag": "SN",
+        "start": 0,
+        "len": 4
+      },
+      {
+        "form": "년",
+        "tag": "NNB",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "9",
+        "tag": "SN",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "월",
+        "tag": "NNB",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": "19",
+        "tag": "SN",
+        "start": 9,
+        "len": 2
+      },
+      {
+        "form": "일",
+        "tag": "NNB",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "월": [
+        {
+          "candidate_id": 26709,
+          "entry_id": 69602,
+          "written_form": "월",
+          "origin_raw": "月",
+          "replacement": "月",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 26710,
+          "entry_id": 69604,
+          "written_form": "월",
+          "origin_raw": "月",
+          "replacement": "月",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 26711,
+          "entry_id": 69603,
+          "written_form": "월",
+          "origin_raw": "月",
+          "replacement": "月",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 3
+        }
+      ],
+      "년하다": [],
+      "월하다": [],
+      "일하다": [],
+      "년되다": [],
+      "년": [
+        {
+          "candidate_id": 12025,
+          "entry_id": 88848,
+          "written_form": "년",
+          "origin_raw": "年",
+          "replacement": "年",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        },
+        {
+          "candidate_id": 12026,
+          "entry_id": 26823,
+          "written_form": "년",
+          "origin_raw": "年",
+          "replacement": "年",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        }
+      ],
+      "일되다": [],
+      "월되다": [],
+      "일": [
+        {
+          "candidate_id": 28446,
+          "entry_id": 88931,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 28447,
+          "entry_id": 72294,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 28448,
+          "entry_id": 89863,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 28449,
+          "entry_id": 62598,
+          "written_form": "일",
+          "origin_raw": "日",
+          "replacement": "日",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 28450,
+          "entry_id": 31523,
+          "written_form": "일",
+          "origin_raw": "一/壹",
+          "replacement": "一",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 5
+        },
+        {
+          "candidate_id": 28451,
+          "entry_id": 31528,
+          "written_form": "일",
+          "origin_raw": "一/壹",
+          "replacement": "一",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 6
+        }
+      ]
+    },
+    "python_display": "2026年 9月 19日",
+    "python_segments": [
+      {
+        "original": "2026",
+        "display_text": "2026",
+        "status": "kept"
+      },
+      {
+        "original": "년",
+        "display_text": "年",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "9",
+        "display_text": "9",
+        "status": "kept"
+      },
+      {
+        "original": "월",
+        "display_text": "月",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "19",
+        "display_text": "19",
+        "status": "kept"
+      },
+      {
+        "original": "일",
+        "display_text": "日",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "가격은 1000원이다.",
+    "tokens": [
+      {
+        "form": "가격",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "은",
+        "tag": "JX",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "1000",
+        "tag": "SN",
+        "start": 4,
+        "len": 4
+      },
+      {
+        "form": "원",
+        "tag": "NNB",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "이",
+        "tag": "VCP",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 11,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "가격하다": [
+        {
+          "candidate_id": 5698,
+          "entry_id": 27774,
+          "written_form": "가격하다",
+          "origin_raw": "加擊하다",
+          "replacement": "加擊",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "가격": [
+        {
+          "candidate_id": 5691,
+          "entry_id": 15047,
+          "written_form": "가격",
+          "origin_raw": "加擊",
+          "replacement": "加擊",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 5692,
+          "entry_id": 62450,
+          "written_form": "가격",
+          "origin_raw": "價格",
+          "replacement": "價格",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        }
+      ],
+      "원이": [],
+      "이다": [],
+      "원하다": [
+        {
+          "candidate_id": 26698,
+          "entry_id": 69570,
+          "written_form": "원하다",
+          "origin_raw": "願하다",
+          "replacement": "願",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "원되다": [],
+      "가격되다": [],
+      "이": [
+        {
+          "candidate_id": 27839,
+          "entry_id": 71125,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 8
+        },
+        {
+          "candidate_id": 27840,
+          "entry_id": 71127,
+          "written_form": "이",
+          "origin_raw": "二/貳",
+          "replacement": "二",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 9
+        }
+      ],
+      "원": [
+        {
+          "candidate_id": 26539,
+          "entry_id": 72699,
+          "written_form": "원",
+          "origin_raw": "元/原",
+          "replacement": "元",
+          "replacement_type": "slash_variants",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        },
+        {
+          "candidate_id": 26540,
+          "entry_id": 26713,
+          "written_form": "원",
+          "origin_raw": "圓",
+          "replacement": "圓",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 26541,
+          "entry_id": 72700,
+          "written_form": "원",
+          "origin_raw": "員",
+          "replacement": "員",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 26542,
+          "entry_id": 91853,
+          "written_form": "원",
+          "origin_raw": "願",
+          "replacement": "願",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 26543,
+          "entry_id": 72701,
+          "written_form": "원",
+          "origin_raw": "院",
+          "replacement": "院",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 26544,
+          "entry_id": 72702,
+          "written_form": "원",
+          "origin_raw": "園",
+          "replacement": "園",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ]
+    },
+    "python_display": "가격은 1000원이다.",
+    "python_segments": [
+      {
+        "original": "가격",
+        "display_text": "가격",
+        "status": "ambiguous"
+      },
+      {
+        "original": "은",
+        "display_text": "은",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "1000",
+        "display_text": "1000",
+        "status": "kept"
+      },
+      {
+        "original": "원",
+        "display_text": "원",
+        "status": "ambiguous"
+      },
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "ambiguous"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "AI 기술과 한국어",
+    "tokens": [
+      {
+        "form": "AI",
+        "tag": "SL",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "기술",
+        "tag": "NNG",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "한국어",
+        "tag": "NNP",
+        "start": 7,
+        "len": 3
+      }
+    ],
+    "candidates": {
+      "기술": [
+        {
+          "candidate_id": 11135,
+          "entry_id": 73355,
+          "written_form": "기술",
+          "origin_raw": "技術",
+          "replacement": "技術",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 11136,
+          "entry_id": 38346,
+          "written_form": "기술",
+          "origin_raw": "記述",
+          "replacement": "記述",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "한국어되다": [],
+      "기술하다": [
+        {
+          "candidate_id": 11145,
+          "entry_id": 32512,
+          "written_form": "기술하다",
+          "origin_raw": "記述하다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "기술되다": [
+        {
+          "candidate_id": 11138,
+          "entry_id": 38349,
+          "written_form": "기술되다",
+          "origin_raw": "記述되다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "한국어하다": [],
+      "한국어": [
+        {
+          "candidate_id": 3468,
+          "entry_id": 26910,
+          "written_form": "한국어",
+          "origin_raw": "韓國語",
+          "replacement": "韓國語",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "AI 기술과 韓國語",
+    "python_segments": [
+      {
+        "original": "AI",
+        "display_text": "AI",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "기술",
+        "display_text": "기술",
+        "status": "ambiguous"
+      },
+      {
+        "original": "과",
+        "display_text": "과",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "한국어",
+        "display_text": "韓國語",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "Python과 JavaScript를 사용한다.",
+    "tokens": [
+      {
+        "form": "Python",
+        "tag": "SL",
+        "start": 0,
+        "len": 6
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "JavaScript",
+        "tag": "SL",
+        "start": 8,
+        "len": 10
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 18,
+        "len": 1
+      },
+      {
+        "form": "사용",
+        "tag": "NNG",
+        "start": 20,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 22,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 22,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 24,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "사용하": [],
+      "사용되다": [
+        {
+          "candidate_id": 19631,
+          "entry_id": 66652,
+          "written_form": "사용되다",
+          "origin_raw": "使用되다",
+          "replacement": "使用",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "사용": [
+        {
+          "candidate_id": 19629,
+          "entry_id": 66372,
+          "written_form": "사용",
+          "origin_raw": "使用",
+          "replacement": "使用",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "사용한": [],
+      "사용하다": [
+        {
+          "candidate_id": 19636,
+          "entry_id": 61643,
+          "written_form": "사용하다",
+          "origin_raw": "使用하다",
+          "replacement": "使用",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "Python과 JavaScript를 使用한다.",
+    "python_segments": [
+      {
+        "original": "Python",
+        "display_text": "Python",
+        "status": "kept"
+      },
+      {
+        "original": "과",
+        "display_text": "과",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "JavaScript",
+        "display_text": "JavaScript",
+        "status": "kept"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "사용",
+        "display_text": "使用",
+        "status": "converted"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "漢字와 한글을 함께 쓴다.",
+    "tokens": [
+      {
+        "form": "漢字",
+        "tag": "SH",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "와",
+        "tag": "JC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "한글",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "을",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "함께",
+        "tag": "MAG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "쓰",
+        "tag": "VV",
+        "start": 11,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 11,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 13,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "한글하다": [],
+      "한글": [],
+      "쓰다": [],
+      "한글되다": [],
+      "쓰": []
+    },
+    "python_display": "漢字와 한글을 함께 쓴다.",
+    "python_segments": [
+      {
+        "original": "漢字",
+        "display_text": "漢字",
+        "status": "kept"
+      },
+      {
+        "original": "와",
+        "display_text": "와",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "한글",
+        "display_text": "한글",
+        "status": "no_match"
+      },
+      {
+        "original": "을",
+        "display_text": "을",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "함께",
+        "display_text": "함께",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "쓴",
+        "display_text": "쓴",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "이 문장에는 변환할 단어가 없다.",
+    "tokens": [
+      {
+        "form": "이",
+        "tag": "MM",
+        "start": 0,
+        "len": 1
+      },
+      {
+        "form": "문장",
+        "tag": "NNG",
+        "start": 2,
+        "len": 2
+      },
+      {
+        "form": "에",
+        "tag": "JKB",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "는",
+        "tag": "JX",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "변환",
+        "tag": "NNG",
+        "start": 7,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "ᆯ",
+        "tag": "ETM",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "단어",
+        "tag": "NNG",
+        "start": 11,
+        "len": 2
+      },
+      {
+        "form": "가",
+        "tag": "JKS",
+        "start": 13,
+        "len": 1
+      },
+      {
+        "form": "없",
+        "tag": "VA",
+        "start": 15,
+        "len": 1
+      },
+      {
+        "form": "다",
+        "tag": "EF",
+        "start": 16,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 17,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "단어하다": [],
+      "변환되다": [],
+      "변환하다": [
+        {
+          "candidate_id": 17639,
+          "entry_id": 58551,
+          "written_form": "변환하다",
+          "origin_raw": "變換하다",
+          "replacement": "變換",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "변환": [
+        {
+          "candidate_id": 17638,
+          "entry_id": 58550,
+          "written_form": "변환",
+          "origin_raw": "變換",
+          "replacement": "變換",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "단어": [
+        {
+          "candidate_id": 12643,
+          "entry_id": 57287,
+          "written_form": "단어",
+          "origin_raw": "單語",
+          "replacement": "單語",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "문장하다": [],
+      "변환하": [],
+      "없": [],
+      "문장되다": [],
+      "없다": [],
+      "문장": [
+        {
+          "candidate_id": 15840,
+          "entry_id": 57177,
+          "written_form": "문장",
+          "origin_raw": "文章",
+          "replacement": "文章",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 15841,
+          "entry_id": 56910,
+          "written_form": "문장",
+          "origin_raw": "紋章",
+          "replacement": "紋章",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "단어되다": [],
+      "변환할": []
+    },
+    "python_display": "이 문장에는 變換할 單語가 없다.",
+    "python_segments": [
+      {
+        "original": "이",
+        "display_text": "이",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "문장",
+        "display_text": "문장",
+        "status": "ambiguous"
+      },
+      {
+        "original": "에",
+        "display_text": "에",
+        "status": "kept"
+      },
+      {
+        "original": "는",
+        "display_text": "는",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "변환",
+        "display_text": "變換",
+        "status": "converted"
+      },
+      {
+        "original": "할",
+        "display_text": "할",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "단어",
+        "display_text": "單語",
+        "status": "converted"
+      },
+      {
+        "original": "가",
+        "display_text": "가",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "없",
+        "display_text": "없",
+        "status": "no_match"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "가나다라마바사",
+    "tokens": [
+      {
+        "form": "가나다라",
+        "tag": "NNG",
+        "start": 0,
+        "len": 4
+      },
+      {
+        "form": "마",
+        "tag": "NNG",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": "바",
+        "tag": "NNG",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "사",
+        "tag": "NNG",
+        "start": 6,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "사되다": [],
+      "마되다": [],
+      "바": [],
+      "가나다라하다": [],
+      "마바사": [],
+      "가나다라되다": [],
+      "마": [
+        {
+          "candidate_id": 14334,
+          "entry_id": 50193,
+          "written_form": "마",
+          "origin_raw": "魔",
+          "replacement": "魔",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 14335,
+          "entry_id": 50189,
+          "written_form": "마",
+          "origin_raw": "碼",
+          "replacement": "碼",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "의존 명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "사하다": [
+        {
+          "candidate_id": 19757,
+          "entry_id": 61368,
+          "written_form": "사하다",
+          "origin_raw": "赦하다",
+          "replacement": "赦",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "가나다라마": [],
+      "가나다라": [],
+      "바되다": [],
+      "가나다라마바사": [],
+      "가나다라마바": [],
+      "마바": [],
+      "바하다": [],
+      "바사": [],
+      "사": [
+        {
+          "candidate_id": 19375,
+          "entry_id": 61116,
+          "written_form": "사",
+          "origin_raw": "死",
+          "replacement": "死",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19376,
+          "entry_id": 70681,
+          "written_form": "사",
+          "origin_raw": "士",
+          "replacement": "士",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19377,
+          "entry_id": 61118,
+          "written_form": "사",
+          "origin_raw": "私",
+          "replacement": "私",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 19378,
+          "entry_id": 70682,
+          "written_form": "사",
+          "origin_raw": "史",
+          "replacement": "史",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 19379,
+          "entry_id": 58114,
+          "written_form": "사",
+          "origin_raw": "四",
+          "replacement": "四",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "수사",
+          "vocabulary_level": "초급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 19380,
+          "entry_id": 70683,
+          "written_form": "사",
+          "origin_raw": "寺",
+          "replacement": "寺",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 3
+        },
+        {
+          "candidate_id": 19381,
+          "entry_id": 58116,
+          "written_form": "사",
+          "origin_raw": "四",
+          "replacement": "四",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "초급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 19382,
+          "entry_id": 70684,
+          "written_form": "사",
+          "origin_raw": "事",
+          "replacement": "事",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 4
+        },
+        {
+          "candidate_id": 19383,
+          "entry_id": 70685,
+          "written_form": "사",
+          "origin_raw": "社",
+          "replacement": "社",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 5
+        },
+        {
+          "candidate_id": 19384,
+          "entry_id": 70686,
+          "written_form": "사",
+          "origin_raw": "師",
+          "replacement": "師",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "중급",
+          "homonym_number": 6
+        },
+        {
+          "candidate_id": 19385,
+          "entry_id": 70687,
+          "written_form": "사",
+          "origin_raw": "詞",
+          "replacement": "詞",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 7
+        },
+        {
+          "candidate_id": 19386,
+          "entry_id": 70688,
+          "written_form": "사",
+          "origin_raw": "辭",
+          "replacement": "辭",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "접사",
+          "vocabulary_level": "고급",
+          "homonym_number": 8
+        }
+      ],
+      "마하다": []
+    },
+    "python_display": "가나다라魔바사",
+    "python_segments": [
+      {
+        "original": "가나다라",
+        "display_text": "가나다라",
+        "status": "no_match"
+      },
+      {
+        "original": "마",
+        "display_text": "魔",
+        "status": "converted"
+      },
+      {
+        "original": "바",
+        "display_text": "바",
+        "status": "no_match"
+      },
+      {
+        "original": "사",
+        "display_text": "사",
+        "status": "ambiguous"
+      }
+    ]
+  },
+  {
+    "text": "하나, 둘, 셋.",
+    "tokens": [
+      {
+        "form": "하나",
+        "tag": "NR",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": ",",
+        "tag": "SP",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "둘",
+        "tag": "NR",
+        "start": 4,
+        "len": 1
+      },
+      {
+        "form": ",",
+        "tag": "SP",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "셋",
+        "tag": "NR",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 8,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "셋하다": [],
+      "셋되다": [],
+      "하나": [],
+      "하나하다": [],
+      "둘되다": [],
+      "하나되다": [],
+      "셋": [],
+      "둘": [],
+      "둘하다": []
+    },
+    "python_display": "하나, 둘, 셋.",
+    "python_segments": [
+      {
+        "original": "하나",
+        "display_text": "하나",
+        "status": "no_match"
+      },
+      {
+        "original": ",",
+        "display_text": ",",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "둘",
+        "display_text": "둘",
+        "status": "no_match"
+      },
+      {
+        "original": ",",
+        "display_text": ",",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "셋",
+        "display_text": "셋",
+        "status": "no_match"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "정말 감사합니다.",
+    "tokens": [
+      {
+        "form": "정말",
+        "tag": "MAG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "감사",
+        "tag": "NNG",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 5,
+        "len": 1
+      },
+      {
+        "form": "ᆸ니다",
+        "tag": "EF",
+        "start": 5,
+        "len": 3
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 8,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "감사하": [],
+      "감사되다": [],
+      "감사합": [],
+      "감사": [
+        {
+          "candidate_id": 6264,
+          "entry_id": 46944,
+          "written_form": "감사",
+          "origin_raw": "感謝",
+          "replacement": "感謝",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 6265,
+          "entry_id": 14211,
+          "written_form": "감사",
+          "origin_raw": "監事",
+          "replacement": "監事",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 6266,
+          "entry_id": 14210,
+          "written_form": "감사",
+          "origin_raw": "監査",
+          "replacement": "監査",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 3
+        }
+      ],
+      "감사하다": [
+        {
+          "candidate_id": 6270,
+          "entry_id": 71728,
+          "written_form": "감사하다",
+          "origin_raw": "感謝하다",
+          "replacement": "感謝",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 6271,
+          "entry_id": 14229,
+          "written_form": "감사하다",
+          "origin_raw": "監査하다",
+          "replacement": "監査",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        },
+        {
+          "candidate_id": 6272,
+          "entry_id": 63820,
+          "written_form": "감사하다",
+          "origin_raw": "感謝하다",
+          "replacement": "感謝",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "형용사",
+          "vocabulary_level": "초급",
+          "homonym_number": 3
+        }
+      ]
+    },
+    "python_display": "정말 감사합니다.",
+    "python_segments": [
+      {
+        "original": "정말",
+        "display_text": "정말",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "감사",
+        "display_text": "감사",
+        "status": "ambiguous"
+      },
+      {
+        "original": "합",
+        "display_text": "합",
+        "status": "kept"
+      },
+      {
+        "original": "니다",
+        "display_text": "니다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "정보와 통신 기술",
+    "tokens": [
+      {
+        "form": "정보",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "와",
+        "tag": "JC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "통신",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "기술",
+        "tag": "NNG",
+        "start": 7,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "기술": [
+        {
+          "candidate_id": 11135,
+          "entry_id": 73355,
+          "written_form": "기술",
+          "origin_raw": "技術",
+          "replacement": "技術",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 11136,
+          "entry_id": 38346,
+          "written_form": "기술",
+          "origin_raw": "記述",
+          "replacement": "記述",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 2
+        }
+      ],
+      "정보되다": [],
+      "기술하다": [
+        {
+          "candidate_id": 11145,
+          "entry_id": 32512,
+          "written_form": "기술하다",
+          "origin_raw": "記述하다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "기술되다": [
+        {
+          "candidate_id": 11138,
+          "entry_id": 38349,
+          "written_form": "기술되다",
+          "origin_raw": "記述되다",
+          "replacement": "記述",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "통신되다": [],
+      "통신": [
+        {
+          "candidate_id": 1887,
+          "entry_id": 71479,
+          "written_form": "통신",
+          "origin_raw": "通信",
+          "replacement": "通信",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "통신하다": [
+        {
+          "candidate_id": 1894,
+          "entry_id": 86008,
+          "written_form": "통신하다",
+          "origin_raw": "通信하다",
+          "replacement": "通信",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "정보하다": [],
+      "정보": [
+        {
+          "candidate_id": 30938,
+          "entry_id": 70878,
+          "written_form": "정보",
+          "origin_raw": "情報",
+          "replacement": "情報",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ]
+    },
+    "python_display": "情報와 通信 기술",
+    "python_segments": [
+      {
+        "original": "정보",
+        "display_text": "情報",
+        "status": "converted"
+      },
+      {
+        "original": "와",
+        "display_text": "와",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "통신",
+        "display_text": "通信",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "기술",
+        "display_text": "기술",
+        "status": "ambiguous"
+      }
+    ]
+  },
+  {
+    "text": "문화적 차이를 이해한다.",
+    "tokens": [
+      {
+        "form": "문화",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "적",
+        "tag": "XSN",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "차이",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "를",
+        "tag": "JKO",
+        "start": 6,
+        "len": 1
+      },
+      {
+        "form": "이해",
+        "tag": "NNG",
+        "start": 8,
+        "len": 2
+      },
+      {
+        "form": "하",
+        "tag": "XSV",
+        "start": 10,
+        "len": 1
+      },
+      {
+        "form": "ᆫ다",
+        "tag": "EF",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "차이": [
+        {
+          "candidate_id": 33535,
+          "entry_id": 62404,
+          "written_form": "차이",
+          "origin_raw": "差異",
+          "replacement": "差異",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "이해되다": [
+        {
+          "candidate_id": 28151,
+          "entry_id": 24963,
+          "written_form": "이해되다",
+          "origin_raw": "理解되다",
+          "replacement": "理解",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "차이하다": [],
+      "문화하다": [],
+      "차이되다": [],
+      "이해한": [],
+      "이해하": [],
+      "문화": [
+        {
+          "candidate_id": 15902,
+          "entry_id": 71460,
+          "written_form": "문화",
+          "origin_raw": "文化",
+          "replacement": "文化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "이해": [
+        {
+          "candidate_id": 28148,
+          "entry_id": 24995,
+          "written_form": "이해",
+          "origin_raw": "利害",
+          "replacement": "利害",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 28149,
+          "entry_id": 69533,
+          "written_form": "이해",
+          "origin_raw": "理解",
+          "replacement": "理解",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 2
+        }
+      ],
+      "문화되다": [],
+      "이해하다": [
+        {
+          "candidate_id": 28157,
+          "entry_id": 69534,
+          "written_form": "이해하다",
+          "origin_raw": "理解하다",
+          "replacement": "理解",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "문화적": [
+        {
+          "candidate_id": 15920,
+          "entry_id": 15720,
+          "written_form": "문화적",
+          "origin_raw": "文化的",
+          "replacement": "文化的",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 15921,
+          "entry_id": 15719,
+          "written_form": "문화적",
+          "origin_raw": "文化的",
+          "replacement": "文化的",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "관형사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ]
+    },
+    "python_display": "文化的 差異를 이해한다.",
+    "python_segments": [
+      {
+        "original": "문화적",
+        "display_text": "文化的",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "차이",
+        "display_text": "差異",
+        "status": "converted"
+      },
+      {
+        "original": "를",
+        "display_text": "를",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "이해",
+        "display_text": "이해",
+        "status": "ambiguous"
+      },
+      {
+        "original": "한",
+        "display_text": "한",
+        "status": "kept"
+      },
+      {
+        "original": "다",
+        "display_text": "다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "국제화 시대",
+    "tokens": [
+      {
+        "form": "국제",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "화",
+        "tag": "XSN",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "시대",
+        "tag": "NNG",
+        "start": 4,
+        "len": 2
+      }
+    ],
+    "candidates": {
+      "시대": [
+        {
+          "candidate_id": 22946,
+          "entry_id": 65119,
+          "written_form": "시대",
+          "origin_raw": "時代",
+          "replacement": "時代",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "국제화": [
+        {
+          "candidate_id": 10112,
+          "entry_id": 36796,
+          "written_form": "국제화",
+          "origin_raw": "國際化",
+          "replacement": "國際化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "국제": [
+        {
+          "candidate_id": 10092,
+          "entry_id": 58597,
+          "written_form": "국제",
+          "origin_raw": "國際",
+          "replacement": "國際",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "초급",
+          "homonym_number": 0
+        }
+      ],
+      "시대하다": [],
+      "국제되다": [],
+      "국제하다": [],
+      "시대되다": []
+    },
+    "python_display": "國際化 時代",
+    "python_segments": [
+      {
+        "original": "국제화",
+        "display_text": "國際化",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "시대",
+        "display_text": "時代",
+        "status": "converted"
+      }
+    ]
+  },
+  {
+    "text": "현대 한국 사회의 변화.",
+    "tokens": [
+      {
+        "form": "현대",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "한국",
+        "tag": "NNP",
+        "start": 3,
+        "len": 2
+      },
+      {
+        "form": "사회",
+        "tag": "NNG",
+        "start": 6,
+        "len": 2
+      },
+      {
+        "form": "의",
+        "tag": "JKG",
+        "start": 8,
+        "len": 1
+      },
+      {
+        "form": "변화",
+        "tag": "NNG",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "변화되다": [
+        {
+          "candidate_id": 17632,
+          "entry_id": 14476,
+          "written_form": "변화되다",
+          "origin_raw": "變化되다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "현대": [
+        {
+          "candidate_id": 4221,
+          "entry_id": 73220,
+          "written_form": "현대",
+          "origin_raw": "現代",
+          "replacement": "現代",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "변화": [
+        {
+          "candidate_id": 17631,
+          "entry_id": 83169,
+          "written_form": "변화",
+          "origin_raw": "變化",
+          "replacement": "變化",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "한국": [
+        {
+          "candidate_id": 3464,
+          "entry_id": 70029,
+          "written_form": "한국",
+          "origin_raw": "韓國",
+          "replacement": "韓國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "사회": [
+        {
+          "candidate_id": 19772,
+          "entry_id": 91918,
+          "written_form": "사회",
+          "origin_raw": "司會",
+          "replacement": "司會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 1
+        },
+        {
+          "candidate_id": 19773,
+          "entry_id": 62378,
+          "written_form": "사회",
+          "origin_raw": "社會",
+          "replacement": "社會",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "중급",
+          "homonym_number": 2
+        }
+      ],
+      "사회하다": [],
+      "한국되다": [],
+      "한국하다": [],
+      "현대되다": [],
+      "사회되다": [],
+      "변화하다": [
+        {
+          "candidate_id": 17637,
+          "entry_id": 65536,
+          "written_form": "변화하다",
+          "origin_raw": "變化하다",
+          "replacement": "變化",
+          "replacement_type": "mixed",
+          "is_reliable": 1,
+          "part_of_speech": "동사",
+          "vocabulary_level": "중급",
+          "homonym_number": 0
+        }
+      ],
+      "현대하다": []
+    },
+    "python_display": "現代 韓國 社會의 變化.",
+    "python_segments": [
+      {
+        "original": "현대",
+        "display_text": "現代",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "한국",
+        "display_text": "韓國",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "사회",
+        "display_text": "社會",
+        "status": "converted"
+      },
+      {
+        "original": "의",
+        "display_text": "의",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "변화",
+        "display_text": "變化",
+        "status": "converted"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "대한민국 헌법을 읽는다.",
+    "tokens": [
+      {
+        "form": "대한민국",
+        "tag": "NNP",
+        "start": 0,
+        "len": 4
+      },
+      {
+        "form": "헌법",
+        "tag": "NNG",
+        "start": 5,
+        "len": 2
+      },
+      {
+        "form": "을",
+        "tag": "JKO",
+        "start": 7,
+        "len": 1
+      },
+      {
+        "form": "읽",
+        "tag": "VV",
+        "start": 9,
+        "len": 1
+      },
+      {
+        "form": "는다",
+        "tag": "EF",
+        "start": 10,
+        "len": 2
+      },
+      {
+        "form": ".",
+        "tag": "SF",
+        "start": 12,
+        "len": 1
+      }
+    ],
+    "candidates": {
+      "대한민국되다": [],
+      "헌법되다": [],
+      "대한민국하다": [],
+      "헌법하다": [],
+      "읽다": [],
+      "헌법": [
+        {
+          "candidate_id": 4151,
+          "entry_id": 86455,
+          "written_form": "헌법",
+          "origin_raw": "憲法",
+          "replacement": "憲法",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "고급",
+          "homonym_number": 0
+        }
+      ],
+      "대한민국": [
+        {
+          "candidate_id": 13347,
+          "entry_id": 70041,
+          "written_form": "대한민국",
+          "origin_raw": "大韓民國",
+          "replacement": "大韓民國",
+          "replacement_type": "pure_hanja",
+          "is_reliable": 1,
+          "part_of_speech": "명사",
+          "vocabulary_level": "없음",
+          "homonym_number": 0
+        }
+      ],
+      "읽": []
+    },
+    "python_display": "大韓民國 憲法을 읽는다.",
+    "python_segments": [
+      {
+        "original": "대한민국",
+        "display_text": "大韓民國",
+        "status": "converted"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "헌법",
+        "display_text": "憲法",
+        "status": "converted"
+      },
+      {
+        "original": "을",
+        "display_text": "을",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "읽",
+        "display_text": "읽",
+        "status": "no_match"
+      },
+      {
+        "original": "는다",
+        "display_text": "는다",
+        "status": "kept"
+      },
+      {
+        "original": ".",
+        "display_text": ".",
+        "status": "kept"
+      }
+    ]
+  },
+  {
+    "text": "한글과 漢字 mixed text.",
+    "tokens": [
+      {
+        "form": "한글",
+        "tag": "NNG",
+        "start": 0,
+        "len": 2
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "start": 2,
+        "len": 1
+      },
+      {
+        "form": "漢字",
+        "tag": "SH",
+        "start": 4,
+        "len": 2
+      },
+      {
+        "form": "mixed",
+        "tag": "SL",
+        "start": 7,
+        "len": 5
+      },
+      {
+        "form": "text.",
+        "tag": "SL",
+        "start": 13,
+        "len": 5
+      }
+    ],
+    "candidates": {
+      "한글하다": [],
+      "한글되다": [],
+      "한글": []
+    },
+    "python_display": "한글과 漢字 mixed text.",
+    "python_segments": [
+      {
+        "original": "한글",
+        "display_text": "한글",
+        "status": "no_match"
+      },
+      {
+        "original": "과",
+        "display_text": "과",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "漢字",
+        "display_text": "漢字",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "mixed",
+        "display_text": "mixed",
+        "status": "kept"
+      },
+      {
+        "original": " ",
+        "display_text": " ",
+        "status": "kept"
+      },
+      {
+        "original": "text.",
+        "display_text": "text.",
+        "status": "kept"
+      }
+    ]
+  }
+]
