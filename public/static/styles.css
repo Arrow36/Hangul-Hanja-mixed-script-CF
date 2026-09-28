@@ -190,6 +190,30 @@
         }
 
         /* Result Area */
+        .result-wrap {
+            position: relative;
+            display: flex;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+
+        .kiwi-status {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .kiwi-status[hidden] { display: none; }
+
         .result-section {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
