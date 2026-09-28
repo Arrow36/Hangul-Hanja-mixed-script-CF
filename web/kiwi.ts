@@ -9,8 +9,12 @@ worker.onmessage = (event: MessageEvent<Reply>) => {
   pending.delete(event.data.id);
   event.data.ok ? entry.resolve(event.data) : entry.reject(new Error(event.data.error || 'Kiwi failed'));
 };
-worker.onerror = () => {
-  for (const entry of pending.values()) entry.reject(new Error('Kiwi worker failed'));
+worker.onerror = (event) => {
+  for (const entry of pending.values()) entry.reject(new Error(event.message || 'Kiwi worker failed'));
+  pending.clear();
+};
+worker.onmessageerror = () => {
+  for (const entry of pending.values()) entry.reject(new Error('Kiwi worker message failed'));
   pending.clear();
 };
 function send(type: 'init' | 'tokenize', text = ''): Promise<Reply> {

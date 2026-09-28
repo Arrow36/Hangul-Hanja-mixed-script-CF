@@ -22,6 +22,11 @@ def main():
         raise SystemExit('Run npm install first')
     shutil.copyfile(wasm, PUBLIC / 'static/kiwi-wasm.wasm')
     if (MODEL / 'manifest.json').exists():
+        manifest = json.loads((MODEL / 'manifest.json').read_text(encoding='utf-8'))
+        if all(isinstance(value, list) for value in manifest.values()):
+            upgraded = {name: {'parts': parts, 'sizes': [(MODEL / part).stat().st_size for part in parts]}
+                        for name, parts in manifest.items()}
+            (MODEL / 'manifest.json').write_text(json.dumps(upgraded, ensure_ascii=False), encoding='utf-8')
         return
     archive = ROOT / 'work-kiwi-model.tgz'
     try:
@@ -34,6 +39,7 @@ def main():
             for name in FILES:
                 member = tar.getmember('models/cong/base/' + name)
                 parts = []
+                sizes = []
                 with tar.extractfile(member) as source:
                     assert source is not None
                     index = 0
@@ -41,8 +47,9 @@ def main():
                         part = f'{name}.{index:03d}'
                         (MODEL / part).write_bytes(data)
                         parts.append(part)
+                        sizes.append(len(data))
                         index += 1
-                manifest[name] = parts
+                manifest[name] = {'parts': parts, 'sizes': sizes}
         (MODEL / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False), encoding='utf-8')
     finally:
         archive.unlink(missing_ok=True)
