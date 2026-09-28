@@ -18,6 +18,8 @@ const state = {
     sidebarSegment: null,
     lastSearchResults: null,
     lastProcessingMs: null,
+    conversionError: null,
+    isConverting: false,
     debounceTimer: null,
     isComposing: false,
     sidebarOpen: false,
@@ -436,14 +438,15 @@ function updateFooterStats() {
     const lang = state.language;
     const len = state.inputText.length;
     const hasResult = state.segments && state.segments.length > 0;
-    const statusKey = hasResult ? 'done' : 'ready';
+    const statusKey = state.isConverting ? 'converting' : hasResult ? 'done' : 'ready';
+    const statusText = state.conversionError;
 
     if (isMobile) {
         const compactChars = (UI[lang] || UI.zh).charsShort || UI.zh.charsShort || (n => `${n}字`);
         elCharCount.textContent = typeof compactChars === 'function' ? compactChars(len) : `${len} ${compactChars}`;
 
         const compactStatus = (UI[lang] || UI.zh).statusShort || UI.zh.statusShort || {};
-        elStatus.textContent = compactStatus[statusKey] || t(statusKey);
+        elStatus.textContent = statusText || compactStatus[statusKey] || t(statusKey);
 
         elProcTime.textContent = state.lastProcessingMs != null ? `${state.lastProcessingMs}ms` : '—';
 
@@ -453,7 +456,7 @@ function updateFooterStats() {
         }
     } else {
         elCharCount.textContent = `${len} ${t('chars')}`;
-        elStatus.textContent = t(statusKey);
+        elStatus.textContent = statusText || t(statusKey);
         elProcTime.textContent = state.lastProcessingMs != null
             ? `${t('processing')}: ${state.lastProcessingMs} ms`
             : '—';
@@ -651,6 +654,8 @@ btnClear.addEventListener('click', () => {
     state.segments = [];
     state.selectedSegmentId = null;
     state.lastProcessingMs = null;
+    state.conversionError = null;
+    state.isConverting = false;
     renderResult();
     updateFooterStats();
 });
@@ -739,6 +744,8 @@ elResult.addEventListener('click', (e) => {
 // Input & Conversion
 function handleInput(e) {
     state.inputText = elInput.value;
+    state.conversionError = null;
+    state.isConverting = !state.isComposing && state.inputText.trim().length > 0;
     state.latestRequestId = `invalid-${++state.requestId}`;
     state.inputRevision++;
     conversionGate.cancel();
@@ -750,7 +757,6 @@ function handleInput(e) {
     clearTimeout(state.debounceTimer);
 
     if (!state.isComposing && state.inputText.trim().length > 0) {
-        elStatus.textContent = t('converting');
         updateFooterStats();
         state.debounceTimer = setTimeout(() => {
             convertText(state.inputText);
@@ -765,6 +771,9 @@ function handleInput(e) {
 
 async function convertText(text) {
     const request = conversionGate.begin();
+    state.conversionError = null;
+    state.isConverting = true;
+    updateFooterStats();
     const reqId = `req-${++state.requestId}`;
     state.latestRequestId = reqId;
     const startTime = performance.now();
@@ -775,6 +784,7 @@ async function convertText(text) {
         if (!request.isCurrent() || data.request_id !== state.latestRequestId) return;
 
         state.segments = data.segments || [];
+        state.isConverting = false;
         const endTime = performance.now();
         state.lastProcessingMs = (endTime - startTime).toFixed(1);
         updateFooterStats();
@@ -783,7 +793,8 @@ async function convertText(text) {
         if (error.name === 'AbortError' || !request.isCurrent()) return;
         console.error('Conversion error:', error);
         if (reqId === state.latestRequestId) {
-            elStatus.textContent = error.message && error.message.includes('词典服务') ? error.message : t('error');
+            state.isConverting = false;
+            state.conversionError = error.message && error.message.includes('词典服务') ? error.message : t('error');
             updateFooterStats();
         }
     }
@@ -1299,8 +1310,9 @@ window.addEventListener('DOMContentLoaded', () => {
     state.inputText = elInput.value;
     state.segments = [];
     state.lastProcessingMs = null;
+    state.conversionError = null;
+    state.isConverting = true;
     renderResult();
-    elStatus.textContent = t('converting');
     updateFooterStats();
     convertText(state.inputText);
 });

@@ -86,7 +86,7 @@ npm run dev
 
 `seed_local_d1.py` 只修改 `.wrangler/state` 中的本地测试数据库，不连接 Cloudflare；可重复运行。页面地址只有在 `npm run dev` 正在运行且终端显示 `Ready on http://127.0.0.1:8787` 时才可打开。
 
-`/kiwi-demo.html` 是 Kiwi 最小浏览器测试，输入 `한국 경제가 빠르게 성장했다.` 后显示 `form/tag/start/len`。`scripts/verify_conversion.py` 从原 Python 版本生成 42 条回归样例；当前在相同 token/候选条件下 TypeScript 显示文本 42/42 一致，`npm test` 生成 `tests_cf/differences.json`。浏览器 Kiwi 模型与 Python 模型的差异仍可能影响其他句子。
+`/kiwi-demo.html` 是 Kiwi 最小浏览器测试，输入 `한국 경제가 빠르게 성장했다.` 后显示 `form/tag/start/len`。`scripts/verify_conversion.py` 从原 Python 版本生成 42 条回归样例；`npm test` 要求相同 token/候选条件下 TypeScript 显示文本全部一致，并生成 `tests_cf/differences.json`。实际 WASM 模型配合完整词典复测为 41/42；其中一处由 Kiwi 模型分词差异造成，不属于固定 token 回归测试的覆盖范围。
 
 ## 5. 部署与 GitHub 自动部署
 
@@ -116,7 +116,7 @@ GitHub 仓库 **Settings → Secrets and variables → Actions** 中建立：
 - `POST /api/select-candidate`：验证用户手选的词条。
 - `GET /api/version`、`/api/stats`：词典版本与统计。
 
-浏览器使用内存 Map、IndexedDB 持久缓存与静态资源 HTTP 缓存。词典服务请求失败时显示明确错误，不会将输入文本加入 Cloudflare Cache。模型只在浏览器 Worker 中初始化一次。Cloudflare Worker bundle 本地 dry-run 为约 10 KiB，不包含 WASM/模型。
+浏览器使用页面内存 Map 与静态资源 HTTP 缓存；词典候选不再持久缓存，以免数据库更新后继续使用旧结果。词典服务请求失败时显示明确错误，不会将输入文本加入 Cloudflare Cache。模型只在浏览器 Worker 中初始化一次。Cloudflare Worker bundle 本地 dry-run 为约 10 KiB，不包含 WASM/模型。
 
 ## 已知限制
 

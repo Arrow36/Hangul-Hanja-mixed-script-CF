@@ -1,5 +1,7 @@
 """Apply generated SQL chunks remotely with Wrangler, in stable order."""
 import argparse
+import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -11,12 +13,14 @@ def main():
     args = parser.parse_args()
     files = sorted(args.directory.glob('*.sql'))
     if not files: parser.error('No SQL chunks found')
+    npx = shutil.which('npx.cmd' if os.name == 'nt' else 'npx')
+    if not npx: parser.error('npx was not found; install Node.js and npm first')
     checkpoint = args.directory / ('.imported-local' if args.local else '.imported-remote')
     completed = set(checkpoint.read_text().splitlines()) if checkpoint.exists() else set()
     for index, path in enumerate(files, 1):
         if path.name in completed: continue
         print(f'[{index}/{len(files)}] {path}', flush=True)
-        subprocess.run(['npx', 'wrangler', 'd1', 'execute', args.database_name,
+        subprocess.run([npx, 'wrangler', 'd1', 'execute', args.database_name,
                         '--local' if args.local else '--remote', '--file', str(path)], check=True)
         with checkpoint.open('a') as stream: stream.write(path.name + '\n')
 

@@ -6,8 +6,8 @@ import { convert } from './converter.bundle.mjs';
 const cases = JSON.parse(fs.readFileSync(new URL('./regression.json', import.meta.url), 'utf8'));
 const collocations = JSON.parse(fs.readFileSync(new URL('../public/static/collocations.json', import.meta.url), 'utf8'));
 
-test('42 original Python examples preserve text spans and report conversion parity', async () => {
-  assert.ok(cases.length >= 40);
+test('fixed-token examples preserve text spans and exactly match Python output', async () => {
+  assert.ok(cases.length >= 42, 'regression corpus shrank');
   const differences = [];
   for (const item of cases) {
     const segments = await convert(item.text, item.tokens, async words =>
@@ -19,5 +19,5 @@ test('42 original Python examples preserve text spans and report conversion pari
   }
   fs.writeFileSync(new URL('./differences.json', import.meta.url), JSON.stringify(differences,null,2));
   console.log(`Python/TS display matches: ${cases.length-differences.length}/${cases.length}`);
-  assert.ok(cases.length-differences.length >= 20, 'severe regression in conversion parity');
+  assert.deepEqual(differences, [], 'fixed-token conversion parity regressed');
 });
