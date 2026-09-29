@@ -51,6 +51,8 @@ python scripts/import_d1.py output/d1/raw hangul-hanja-raw
 
 Workers Paid 账户可在额度内连续运行两条导入命令，仍需保留检查点以应对网络中断。部署前以远程数据库的实际 `count(*)` 核对完整性；`/api/stats` 中的元数据是源词典总数，不能用来判断远程导入进度。
 
+新 JSON 快照不能直接重跑当前导出和导入命令来覆盖线上词典：`INSERT OR IGNORE` 只用于同一快照的断点续传。更新快照时，应先在本地重新生成 SQLite 与 SQL，导入一组新的主库和原始库，核对实际行数及样例查询，再将 `wrangler.jsonc` 的两个 `database_id` 一起切换并部署。保留旧库用于回滚。若要仅上传变动词条，需要另行实现按词条 ID 比较、删除旧关联记录、重新插入新关联记录及更新元数据的专用增量脚本。
+
 导入完成后核对关键词：
 
 ```bash
