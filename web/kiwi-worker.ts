@@ -1,20 +1,31 @@
 import { KiwiBuilder, Match } from 'kiwi-nlp';
 import type { Kiwi } from 'kiwi-nlp';
+import type { KiwiFailure } from './kiwi';
 
 type RequestMessage = { id: number; type: 'tokenize'; text: string } | { id: number; type: 'init' };
 let kiwiPromise: Promise<Kiwi> | undefined;
+class ModelError extends Error {
+  constructor(readonly failure: KiwiFailure) { super(failure.code); }
+}
 
 async function loadModel(): Promise<Kiwi> {
   let builder: KiwiBuilder;
   try { builder = await KiwiBuilder.create('/static/kiwi-wasm.wasm'); }
-  catch (cause) { throw new Error(`WASM 加载失败：${message(cause)}`); }
-  const manifest = await fetch('/model/manifest.json').then(async r => {
-    if (!r.ok) throw new Error('Kiwi model manifest unavailable');
-    return await r.json() as Record<string, { parts: string[]; sizes: number[] }>;
-  });
+  catch (cause) { throw new ModelError({code:'wasm',detail:message(cause)}); }
+  let manifest: Record<string, { parts: string[]; sizes: number[] }>;
+  try {
+    const response = await fetch('/model/manifest.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    manifest = await response.json() as typeof manifest;
+  } catch (cause) { throw new ModelError({code:'manifest',detail:message(cause)}); }
+  if (!manifest || typeof manifest !== 'object' || Array.isArray(manifest)) throw new ModelError({code:'manifest-format'});
   const files: Record<string, Uint8Array> = {};
-  for (const [name, { parts, sizes }] of Object.entries(manifest)) {
-    if (!Array.isArray(parts) || !Array.isArray(sizes) || parts.length !== sizes.length) throw new Error('模型清单格式无效');
+  for (const [name, entry] of Object.entries(manifest)) {
+    const parts = entry?.parts;
+    const sizes = entry?.sizes;
+    if (!Array.isArray(parts) || !Array.isArray(sizes) || parts.length !== sizes.length ||
+        !parts.every(part => typeof part === 'string') ||
+        !sizes.every(size => Number.isSafeInteger(size) && size >= 0)) throw new ModelError({code:'manifest-format'});
     const total = sizes.reduce((n, size) => n + size, 0);
     const merged = new Uint8Array(total);
     let offset = 0;
@@ -23,19 +34,24 @@ async function loadModel(): Promise<Kiwi> {
       let buffer = await fetchPart(path);
       // A browser can keep a truncated cached response even after revalidation.
       if (buffer.length !== sizes[i]) buffer = await fetchPart(path, 'no-store');
-      if (buffer.length !== sizes[i]) throw new Error(`模型文件大小不符：${parts[i]}（需要 ${sizes[i]} 字节，收到 ${buffer.length} 字节）`);
+      if (buffer.length !== sizes[i]) throw new ModelError({code:'size',file:parts[i],expected:sizes[i],actual:buffer.length});
       merged.set(buffer, offset); offset += buffer.length;
     }
     files[name] = merged;
   }
   try { return await builder.build({ modelFiles: files, modelType: 'cong' }); }
-  catch (cause) { throw new Error(`模型初始化失败：${message(cause)}`); }
+  catch (cause) { throw new ModelError({code:'build',detail:message(cause)}); }
 }
 
 async function fetchPart(path: string, cache?: RequestCache): Promise<Uint8Array> {
-  const response = await fetch(path, { cache });
-  if (!response.ok) throw new Error(`模型文件下载失败：${path} (${response.status})`);
-  return new Uint8Array(await response.arrayBuffer());
+  try {
+    const response = await fetch(path, { cache });
+    if (!response.ok) throw new ModelError({code:'download',file:path,status:response.status});
+    return new Uint8Array(await response.arrayBuffer());
+  } catch (cause) {
+    if (cause instanceof ModelError) throw cause;
+    throw new ModelError({code:'download',file:path,detail:message(cause)});
+  }
 }
 
 function message(error: unknown): string { return error instanceof Error ? error.message : String(error); }
@@ -53,6 +69,6 @@ self.onmessage = async (event: MessageEvent<RequestMessage>) => {
     }
   } catch (error) {
     console.error('Kiwi initialization failed', error);
-    self.postMessage({ id, ok: false, error: message(error) });
+    self.postMessage({ id, ok: false, error: error instanceof ModelError ? error.failure : {code:'unknown',detail:message(error)} });
   }
 };
