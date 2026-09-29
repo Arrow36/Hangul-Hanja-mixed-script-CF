@@ -3,6 +3,7 @@ import argparse
 import os
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 def main():
@@ -20,8 +21,19 @@ def main():
     for index, path in enumerate(files, 1):
         if path.name in completed: continue
         print(f'[{index}/{len(files)}] {path}', flush=True)
-        subprocess.run([npx, 'wrangler', 'd1', 'execute', args.database_name,
-                        '--local' if args.local else '--remote', '--file', str(path)], check=True)
+        command = [npx, 'wrangler', 'd1', 'execute', args.database_name,
+                   '--local' if args.local else '--remote', '--file', str(path)]
+        for attempt in range(1, 6):
+            result = subprocess.run(command, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, text=True, errors='replace')
+            if result.returncode == 0:
+                break
+            print(result.stdout[-1500:], flush=True)
+            if attempt == 5:
+                raise subprocess.CalledProcessError(result.returncode, command)
+            delay = min(30, 2 ** attempt)
+            print(f'Retrying {path.name} in {delay}s (attempt {attempt + 1}/5)', flush=True)
+            time.sleep(delay)
         with checkpoint.open('a') as stream: stream.write(path.name + '\n')
 
 if __name__ == '__main__': main()
