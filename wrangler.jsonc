@@ -4,7 +4,7 @@
   "compatibility_date": "2026-09-01",
   "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
   "d1_databases": [
-    { "binding": "DB", "database_name": "hangul-hanja-dictionary", "database_id": "REPLACE_WITH_MAIN_D1_ID", "migrations_dir": "migrations" },
-    { "binding": "RAW_DB", "database_name": "hangul-hanja-raw", "database_id": "REPLACE_WITH_RAW_D1_ID", "migrations_dir": "migrations_raw" }
+    { "binding": "DB", "database_name": "hangul-hanja-dictionary", "database_id": "65653dd6-78a8-4e2b-8dce-d83c0123889a", "migrations_dir": "migrations" },
+    { "binding": "RAW_DB", "database_name": "hangul-hanja-raw", "database_id": "a5b5c65d-8e5f-4247-9c16-7cdc7242e565", "migrations_dir": "migrations_raw" }
   ]
 }

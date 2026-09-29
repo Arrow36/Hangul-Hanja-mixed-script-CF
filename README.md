@@ -49,6 +49,8 @@ python scripts/import_d1.py output/d1/raw hangul-hanja-raw
 
 **Free Plan 初次导入需多日。** 这份快照主库约 180 万业务行，远超 D1 Free 每日行写入额度，且索引也会增加写入计数。达到当日限额时脚本会停止；次日再次执行同一命令，脚本按本地检查点跳过已成功的 SQL 文件，同一文件的插入也使用 `INSERT OR IGNORE` 避免重放重复行。不要删除 `output/d1` 或其中的 `.imported-remote` 检查点，直到导入完成。D1 Free 限额按账户汇总，主库和原始 JSON 库共享每日额度。[最新额度与计量](https://developers.cloudflare.com/d1/platform/pricing/)请以官方文档为准。Cloudflare Free 超额后查询/写入会失败，而不会自动产生付费账单。
 
+Workers Paid 账户可在额度内连续运行两条导入命令，仍需保留检查点以应对网络中断。部署前以远程数据库的实际 `count(*)` 核对完整性；`/api/stats` 中的元数据是源词典总数，不能用来判断远程导入进度。
+
 导入完成后核对关键词：
 
 ```bash
