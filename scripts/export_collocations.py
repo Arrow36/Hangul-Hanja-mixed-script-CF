@@ -8,7 +8,8 @@ from app.services.dictionary import DictionaryService
 
 async def main():
     root = Path(__file__).resolve().parent.parent
-    dictionary = DictionaryService(str(root / 'hanja_dict.db'))
+    database = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else root / 'hanja_dict.db'
+    dictionary = DictionaryService(str(database))
     collocations = await dictionary.load_collocations()
     data = {f'{word}\0{context}': origin for (word, context), origin in collocations.items()}
     target = root / 'public/static/collocations.json'

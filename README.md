@@ -2,7 +2,7 @@
 
 将[原版项目](https://github.com/Arrow36/Hangul-Hanja-mixed-script)迁移为 Cloudflare Workers Static Assets + 浏览器官方 Kiwi WebAssembly + TypeScript 转换器 + Workers API + 两个 D1。保留原页面样式、12 种界面语言、词源、候选选择及词典详情。无需 Containers、VPS、R2 或付费 Cloudflare 产品。
 
-原项目架构与迁移依据见 [ARCHITECTURE_ANALYSIS.md](ARCHITECTURE_ANALYSIS.md)。本仓库不包含受词典来源约束的官方 ZIP、生成的数据库或模型二进制；构建脚本会从[Kiwi 官方发布](https://github.com/bab2min/Kiwi/releases/tag/v0.24.0)下载经校验的模型。词典需从[韩国语基础词典](https://krdict.korean.go.kr/download/downloadPopup)下载 JSON ZIP。
+原项目架构与迁移依据见 [ARCHITECTURE_ANALYSIS.md](ARCHITECTURE_ANALYSIS.md)。本仓库用 Git LFS 保存 2026-08-19 和 2026-09-19 两份[韩国语基础词典](https://krdict.korean.go.kr/download/downloadPopup)官方 JSON ZIP；生成的数据库和模型二进制不入库。构建脚本会从[Kiwi 官方发布](https://github.com/bab2min/Kiwi/releases/tag/v0.24.0)下载经校验的模型。词典文本来源为韩国国立国语院，按[官方 CC BY-SA 2.0 KR 政策](https://krdict.korean.go.kr/kor/kboardPolicy/copyRightTermsInfo)署名和共享；压缩包不包含单独授权的多媒体文件。
 
 ## 1. 获取代码与依赖
 
@@ -11,6 +11,7 @@
 ```bash
 git clone https://github.com/Arrow36/Hangul-Hanja-mixed-script-CF.git
 cd Hangul-Hanja-mixed-script-CF
+git lfs pull
 npm ci
 python -m pip install -r requirements.txt
 ```
@@ -19,7 +20,7 @@ python -m pip install -r requirements.txt
 
 ## 2. 准备词典
 
-将实际词典 ZIP 路径替换进命令。已验证用户提供的 `전체 내려받기_한국어기초사전_json_20260919.zip`，导入生成 `hanja_dict.db`；该文件不进入 Git。
+可直接使用 `dictionary-snapshots` 中的 2026-09-19 ZIP，也可将路径替换为后来下载的 ZIP。导入生成 `hanja_dict.db`；该文件不进入 Git。
 
 ```bash
 python scripts/inspect_dictionary.py "/path/to/전체 내려받기_한국어기초사전_json_20260919.zip"
@@ -51,7 +52,34 @@ python scripts/import_d1.py output/d1/raw hangul-hanja-raw
 
 Workers Paid 账户可在额度内连续运行两条导入命令，仍需保留检查点以应对网络中断。部署前以远程数据库的实际 `count(*)` 核对完整性；`/api/stats` 中的元数据是源词典总数，不能用来判断远程导入进度。
 
-新 JSON 快照不能直接重跑当前导出和导入命令来覆盖线上词典：`INSERT OR IGNORE` 只用于同一快照的断点续传。更新快照时，应先在本地重新生成 SQLite 与 SQL，导入一组新的主库和原始库，核对实际行数及样例查询，再将 `wrangler.jsonc` 的两个 `database_id` 一起切换并部署。保留旧库用于回滚。若要仅上传变动词条，需要另行实现按词条 ID 比较、删除旧关联记录、重新插入新关联记录及更新元数据的专用增量脚本。
+新 JSON 快照不能直接重跑本节的全量导出和导入命令来覆盖线上词典：`INSERT OR IGNORE` 只用于同一快照的断点续传。增量更新请使用下节的专用脚本。
+
+### 后续 JSON 快照的增量更新
+
+`dictionary-snapshots/` 中的 ZIP 通过 Git LFS 保存。新快照下载后放进该目录，提交并推送即可保存源文件；`git lfs pull` 可在新电脑取回完整 ZIP。GitHub 页面显示的是 LFS 指针，不能直接浏览 ZIP 内的词条。词典文本归属韩国国立国语院，来源及许可见本 README 开头。
+
+下面以当前线上 `20260919` 和未来 `20261019` 为例，在 **PowerShell** 中执行。需要保留两个快照的本地 SQLite；若没有旧库，可从仓库中的旧 ZIP 重新运行导入命令生成。`output/` 和 SQLite 均不提交 Git。新快照日期请替换为真实文件名。
+
+```powershell
+New-Item -ItemType Directory output/snapshots -Force | Out-Null
+$env:HANJA_DB_PATH = 'output/snapshots/20260919.db'
+python scripts/import_dictionary.py 'dictionary-snapshots/전체 내려받기_한국어기초사전_json_20260919.zip'
+$env:HANJA_DB_PATH = 'output/snapshots/20261019.db'
+python scripts/import_dictionary.py 'dictionary-snapshots/전체 내려받기_한국어기초사전_json_20261019.zip'
+Remove-Item Env:HANJA_DB_PATH
+python scripts/prepare_incremental.py output/snapshots/20260919.db output/snapshots/20261019.db output/delta/20260919-20261019
+Get-Content output/delta/20260919-20261019/manifest.json
+```
+
+`prepare_incremental.py` 比对导入后每个词条的原始 JSON，输出新增、修改、删除词条的统计和两套分批 SQL。主库脚本会替换变动词条及关联的义项、译词、例证、词形和候选；原始库脚本只替换这些词条的 JSON 分块。**先检查清单和 SQL，再执行远程写入**：
+
+```powershell
+python scripts/apply_incremental.py output/delta/20260919-20261019 --remote --apply
+python scripts/export_collocations.py output/snapshots/20261019.db
+npm run deploy
+```
+
+应用脚本先核对线上主库 `import_metadata.sha256` 是否等于旧 ZIP 的哈希、词条总数是否符合旧快照，再更新原始库和主库，最后写入新版本元数据，并核对两库的词条数。每个 SQL 文件有校验值和本地断点；网络中断后用**同一目录**重跑上述命令。版本不符会停止，不会把旧版或不相干的快照覆盖到线上。两库无法跨库事务提交，更新期间短时间内可能出现新旧词条内容不一致，宜在低流量时操作。`collocations.json` 是静态资源，因此 D1 更新完成后还需从新 SQLite 重新生成并部署。新 ZIP 入库时使用 `git add dictionary-snapshots`、`git commit`、`git push`；仅上传 ZIP 不会自动写入 D1。
 
 导入完成后核对关键词：
 
