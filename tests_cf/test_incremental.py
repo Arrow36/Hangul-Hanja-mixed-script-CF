@@ -39,7 +39,9 @@ def make_snapshot(path, version, entries):
 
 class IncrementalTest(unittest.TestCase):
     def test_changed_added_removed_and_replay(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / 'output') as directory:
+        output = ROOT / 'output'
+        output.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=output) as directory:
             root = Path(directory)
             old, new, result = root / 'old.db', root / 'new.db', root / 'delta'
             make_snapshot(old, 'old', {1: 'same', 2: 'before', 3: 'removed'})
