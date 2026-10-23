@@ -2,7 +2,7 @@
 
 将[原版项目](https://github.com/Arrow36/Hangul-Hanja-mixed-script)迁移为 Cloudflare Workers Static Assets + 浏览器官方 Kiwi WebAssembly + TypeScript 转换器 + Workers API + 两个 D1。保留原页面样式、12 种界面语言、词源、候选选择及词典详情。无需 Containers、VPS、R2 或付费 Cloudflare 产品。
 
-原项目架构与迁移依据见 [ARCHITECTURE_ANALYSIS.md](ARCHITECTURE_ANALYSIS.md)。本仓库用 Git LFS 保存 2026-08-19 和 2026-09-19 两份[韩国语基础词典](https://krdict.korean.go.kr/download/downloadPopup)官方 JSON ZIP；生成的数据库和模型二进制不入库。构建脚本会从[Kiwi 官方发布](https://github.com/bab2min/Kiwi/releases/tag/v0.24.0)下载经校验的模型。词典文本来源为韩国国立国语院，按[官方 CC BY-SA 2.0 KR 政策](https://krdict.korean.go.kr/kor/kboardPolicy/copyRightTermsInfo)署名和共享；压缩包不包含单独授权的多媒体文件。
+原项目架构与迁移依据见 [ARCHITECTURE_ANALYSIS.md](ARCHITECTURE_ANALYSIS.md)。本仓库用 Git LFS 保存 2026-08-19、2026-09-19 和 2026-10-19 三份[韩国语基础词典](https://krdict.korean.go.kr/download/downloadPopup)官方 JSON ZIP；生成的数据库和模型二进制不入库。构建脚本会从[Kiwi 官方发布](https://github.com/bab2min/Kiwi/releases/tag/v0.24.0)下载经校验的模型。词典文本来源为韩国国立国语院，按[官方 CC BY-SA 2.0 KR 政策](https://krdict.korean.go.kr/kor/kboardPolicy/copyRightTermsInfo)署名和共享；压缩包不包含单独授权的多媒体文件。
 
 ## 1. 获取代码与依赖
 
@@ -20,11 +20,11 @@ python -m pip install -r requirements.txt
 
 ## 2. 准备词典
 
-可直接使用 `dictionary-snapshots` 中的 2026-09-19 ZIP，也可将路径替换为后来下载的 ZIP。导入生成 `hanja_dict.db`；该文件不进入 Git。
+可直接使用 `dictionary-snapshots` 中的 2026-10-19 ZIP，也可将路径替换为后来下载的 ZIP。导入生成 `hanja_dict.db`；该文件不进入 Git。
 
 ```bash
-python scripts/inspect_dictionary.py "/path/to/전체 내려받기_한국어기초사전_json_20260919.zip"
-python scripts/import_dictionary.py "/path/to/전체 내려받기_한국어기초사전_json_20260919.zip"
+python scripts/inspect_dictionary.py "/path/to/전체 내려받기_한국어기초사전_json_20261019.zip"
+python scripts/import_dictionary.py "/path/to/전체 내려받기_한국어기초사전_json_20261019.zip"
 python scripts/export_collocations.py
 python scripts/export_d1.py hanja_dict.db output/d1
 ```
@@ -58,7 +58,7 @@ Workers Paid 账户可在额度内连续运行两条导入命令，仍需保留�
 
 `dictionary-snapshots/` 中的 ZIP 通过 Git LFS 保存。新快照下载后放进该目录，提交并推送即可保存源文件；`git lfs pull` 可在新电脑取回完整 ZIP。GitHub 页面显示的是 LFS 指针，不能直接浏览 ZIP 内的词条。词典文本归属韩国国立国语院，来源及许可见本 README 开头。
 
-下面以当前线上 `20260919` 和未来 `20261019` 为例，在 **PowerShell** 中执行。需要保留两个快照的本地 SQLite；若没有旧库，可从仓库中的旧 ZIP 重新运行导入命令生成。`output/` 和 SQLite 均不提交 Git。新快照日期请替换为真实文件名。
+下面以从 `20260919` 更新到仓库最新快照 `20261019` 为例，在 **PowerShell** 中执行。需要保留两个快照的本地 SQLite；若没有旧库，可从仓库中的旧 ZIP 重新运行导入命令生成。`output/` 和 SQLite 均不提交 Git。新快照日期请替换为真实文件名。
 
 ```powershell
 New-Item -ItemType Directory output/snapshots -Force | Out-Null

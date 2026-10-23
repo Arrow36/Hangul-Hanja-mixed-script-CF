@@ -1,9 +1,9 @@
 {
-  "data_version": "20260919",
-  "source_filename": "전체 내려받기_한국어기초사전_json_20260919.zip",
-  "sha256": "F9C1B9309AFE66429A92CCA1B2C426DB25EC809D04103ACA74C3A23859280DF6",
+  "data_version": "20261019",
+  "source_filename": "전체 내려받기_한국어기초사전_json_20261019.zip",
+  "sha256": "C8F9FFBF7E9BE1F1EC86FA29E4160A75EEE8044FC081C27788DADF3CEB66D34E",
   "total_entries": 56555,
   "total_senses": 76833,
-  "total_examples": 659075,
-  "entries_with_hanja_origin": 34150
+  "total_examples": 659520,
+  "entries_with_hanja_origin": 34148
 }
