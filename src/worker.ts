@@ -72,9 +72,9 @@ async function api(request: Request, env: Env): Promise<Response> {
       is_reliable:reliable, selection_reason:'user_selected' });
   }
   if (path === '/api/version' || path === '/api/stats') {
-    const metadata = await env.DB.prepare('SELECT data_version,total_entries,total_senses,total_examples,origin_entries FROM import_metadata LIMIT 1').first<Record<string, number | string | null>>();
+    const metadata = await env.DB.prepare('SELECT data_version,parser_version,total_entries,total_senses,total_examples,origin_entries FROM import_metadata LIMIT 1').first<Record<string, number | string | null>>();
     const stats = { total_entries:metadata?.total_entries ?? 0, total_senses:metadata?.total_senses ?? 0, total_examples:metadata?.total_examples ?? 0, entries_with_hanja_origin:metadata?.origin_entries ?? 0 };
-    return json(path === '/api/version' ? { code_version:'cf-0.1.0', api_schema_version:'2.1.0', data_version:metadata?.data_version ?? null, db_stats:stats } : stats);
+    return json(path === '/api/version' ? { code_version:'cf-0.2.0', api_schema_version:'2.2.0', data_version:metadata?.data_version ?? null, parser_version:metadata?.parser_version ?? 'legacy', db_stats:stats } : stats);
   }
   return error('NOT_FOUND', 'API route not found', 404);
 }

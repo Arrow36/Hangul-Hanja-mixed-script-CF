@@ -896,6 +896,18 @@ async function loadRawEntry(button) {
 }
 
 elSidebarContent.addEventListener('click', event => {
+    const reference = event.target.closest('[data-entry-id]');
+    if (reference) {
+        const id = Number(reference.dataset.entryId);
+        if (Number.isSafeInteger(id) && id > 0) lookupEntry(id);
+        return;
+    }
+    const audio = event.target.closest('[data-audio-url]');
+    if (audio) {
+        const url = DictionaryText.audioUrl(audio.dataset.audioUrl);
+        if (url) playAudio(url);
+        return;
+    }
     const button = event.target.closest('[data-load-raw]');
     if (button) loadRawEntry(button);
 });
@@ -992,6 +1004,7 @@ function renderSidebar(segmentData = null) {
     if (!entry) return;
 
     const safe = escapeHTML;
+    const rich = value => DictionaryText.render(value, entry.references || {});
     let html = `<div class="entry-header">`;
 
     // Title and badges
@@ -1011,28 +1024,28 @@ function renderSidebar(segmentData = null) {
         const unitTrans = window.categoryI18n ? window.categoryI18n.localizeLexicalUnit(entry.lexical_unit, state.language) : (entry.lexical_unit === '단어' ? meta.word : entry.lexical_unit);
         html += `<span class="entry-meta-chip">${safe(meta.unit)}: ${safe(unitTrans)}</span>`;
     }
-    if (entry.semantic_category) {
-        const semTrans = window.categoryI18n ? window.categoryI18n.localizeSemanticCategory(entry.semantic_category, state.language) : entry.semantic_category;
+    for (const category of entry.semantic_categories || (entry.semantic_category ? [entry.semantic_category] : [])) {
+        const semTrans = window.categoryI18n ? window.categoryI18n.localizeSemanticCategory(category, state.language) : category;
         html += `<span class="entry-meta-chip">${safe(meta.semantic)}: ${safe(semTrans)}</span>`;
     }
-    if (entry.subject_category) {
-        const subTrans = window.categoryI18n ? window.categoryI18n.localizeSubjectCategory(entry.subject_category, state.language) : entry.subject_category;
+    for (const category of entry.subject_categories || (entry.subject_category ? [entry.subject_category] : [])) {
+        const subTrans = window.categoryI18n ? window.categoryI18n.localizeSubjectCategory(category, state.language) : category;
         html += `<span class="entry-meta-chip">${safe(meta.subject)}: ${safe(subTrans)}</span>`;
     }
     html += `</div>`;
 
     // Pronunciation & Sound
-    const wfWithSound = (entry.word_forms || []).find(w => w.sound_url);
-    const wfPron = (entry.word_forms || []).find(w => w.pronunciation);
-    if (wfWithSound || wfPron) {
-        html += `<div class="pronunciation-box">`;
-        if (wfPron && wfPron.pronunciation) {
-            html += `<span>[${safe(wfPron.pronunciation)}]</span>`;
+    for (const form of (entry.word_forms || []).flatMap(w => [w, ...(w.sub_forms || [])])) {
+        const variants = form.pronunciation_variants || [{pronunciation: form.pronunciation, sound_url: form.sound_url}];
+        if (!variants.some(v => v.pronunciation || v.sound_url)) continue;
+        html += `<div class="pronunciation-box">${form.written_form ? `<span>${safe(form.written_form)}</span>` : ''}`;
+        for (const variant of variants) {
+            const url = DictionaryText.audioUrl(variant.sound_url);
+            html += `<span class="pronunciation-variant">${variant.pronunciation ? `[${safe(variant.pronunciation)}]` : ''}`;
+            if (url) html += `<button type="button" class="audio-btn" data-audio-url="${safe(url)}" title="발음 듣기">🔊</button>`;
+            html += '</span>';
         }
-        if (wfWithSound && wfWithSound.sound_url) {
-            html += `<button class="audio-btn" onclick="playAudio('${encodeURI(wfWithSound.sound_url)}')" title="발음 듣기">🔊</button>`;
-        }
-        html += `</div>`;
+        html += '</div>';
     }
 
     // Origin Box
@@ -1094,12 +1107,14 @@ function renderSidebar(segmentData = null) {
             if (hasNoTranslation && t('noTranslationNotice')) {
                 html += `<span class="no-translation-notice">${safe(t('noTranslationNotice'))} </span>`;
             }
-            html += `${safe(displayedDefinition)}</div>`;
+            html += `${rich(displayedDefinition)}</div>`;
 
-            if (preferred?.lemma) html += `<div class="sense-pattern">${safe(preferred.lemma)}</div>`;
+            if (preferred?.lemma) html += `<div class="sense-pattern">${rich(preferred.lemma)}</div>`;
 
-            if (state.language === 'ko' && sense.syntactic_pattern) {
-                html += `<div class="sense-pattern">${safe(sense.syntactic_pattern)}</div>`;
+            if (state.language === 'ko') {
+                for (const pattern of sense.syntactic_patterns || (sense.syntactic_pattern ? [sense.syntactic_pattern] : [])) {
+                    html += `<div class="sense-pattern">${rich(pattern)}</div>`;
+                }
             }
             if (state.language === 'ko' && sense.annotation) {
                 html += `<div style="font-size:0.82rem; color:#555; margin-bottom:4px;">${safe(m('reference'))}: ${safe(sense.annotation)}</div>`;
@@ -1114,7 +1129,7 @@ function renderSidebar(segmentData = null) {
             if (sense.definition || examples.length) {
                 const labels = EXAMPLE_LABELS[state.language] || EXAMPLE_LABELS.zh;
                 html += `<div class="korean-info-box">`;
-                if (sense.definition) html += `<div class="korean-info-section"><div class="korean-info-title">${safe(m('koreanDefinition'))}</div>${safe(sense.definition)}</div>`;
+                if (sense.definition) html += `<div class="korean-info-section"><div class="korean-info-title">${safe(m('koreanDefinition'))}</div>${rich(sense.definition)}</div>`;
                 if (phrases.length) {
                     html += `<div class="korean-info-section"><div class="korean-info-title">${safe(labels.phrase)}</div><ul class="examples-list">`;
                     phrases.forEach(ex => { html += `<li>${safe(ex.example)}</li>`; });
@@ -1196,7 +1211,7 @@ function renderSearchResults(data) {
                     ${res.part_of_speech ? `<span class="pos-badge">${escapeHTML(posTrans)}</span>` : ''}
                 </div>
                 ${res.origin_raw ? `<div style="font-family: 'Noto Serif KR', serif; color:#e65100; font-size:0.95rem; margin-top:2px;">${escapeHTML(res.origin_raw)}</div>` : ''}
-                ${state.language === 'ko' ? `<div style="font-size:.85rem;color:var(--text-muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHTML(res.definition_preview || '')}</div>` : ''}
+                ${state.language === 'ko' ? `<div style="font-size:.85rem;color:var(--text-muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${DictionaryText.render(res.definition_preview || '')}</div>` : ''}
             </div>
         `;
     });

@@ -1,6 +1,6 @@
 """Canonical dictionary schema, shared by import and validation."""
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 SCHEMA_SQL = """
         PRAGMA journal_mode=WAL;
         PRAGMA synchronous=NORMAL;
@@ -16,7 +16,8 @@ SCHEMA_SQL = """
             total_entries INTEGER,
             total_senses INTEGER,
             total_examples INTEGER,
-            origin_entries INTEGER
+            origin_entries INTEGER,
+            parser_version TEXT NOT NULL DEFAULT 'legacy'
         );
         
         CREATE TABLE IF NOT EXISTS entries (
@@ -132,7 +133,17 @@ SCHEMA_SQL = """
         CREATE INDEX IF NOT EXISTS idx_candidates_wf ON conversion_candidates(written_form);
         CREATE INDEX IF NOT EXISTS idx_candidates_entry ON conversion_candidates(entry_id);
     
-PRAGMA user_version=1;
+CREATE TABLE IF NOT EXISTS entry_compatibility (
+    entry_id INTEGER PRIMARY KEY REFERENCES entries(id) ON DELETE CASCADE,
+    data_json TEXT NOT NULL CHECK(json_valid(data_json))
+);
+CREATE TABLE IF NOT EXISTS dictionary_repairs (
+    repair_id TEXT PRIMARY KEY,
+    source_sha256 TEXT NOT NULL,
+    manifest_sha256 TEXT NOT NULL,
+    applied_at TEXT NOT NULL
+);
+PRAGMA user_version=2;
 """
 
 def create_schema(conn):

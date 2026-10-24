@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TABLES = (
     'import_metadata', 'entries', 'senses', 'equivalents', 'sense_examples',
     'sense_relations', 'multimedia', 'word_forms', 'form_representations',
-    'related_forms', 'conversion_candidates',
+    'related_forms', 'conversion_candidates', 'entry_compatibility',
 )
 
 def local_databases():
@@ -33,7 +33,9 @@ def fill_main(path: Path, source: Path):
     with sqlite3.connect(path) as db:
         db.execute('ATTACH DATABASE ? AS source', (str(source),))
         for table in TABLES:
-            columns = [row[1] for row in db.execute(f'PRAGMA table_info({table})')]
+            columns = [row[1] for row in db.execute(f'PRAGMA source.table_info({table})')]
+            if not columns and table == 'entry_compatibility':
+                continue
             values = ','.join('NULL' if table == 'entries' and name == 'raw_json' else name for name in columns)
             db.execute(f'INSERT OR IGNORE INTO {table} ({",".join(columns)}) SELECT {values} FROM source.{table}')
             db.commit()

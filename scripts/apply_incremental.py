@@ -20,7 +20,7 @@ def wrangler(database, mode, *args):
         raise RuntimeError('npx was not found')
     command = [npx, 'wrangler', 'd1', 'execute', database, mode, *args, '--json']
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, errors='replace')
+                            text=True, encoding='utf-8', errors='strict')
     if result.returncode:
         raise RuntimeError(f'Wrangler failed ({result.returncode}): {result.stdout[-1500:]}')
     match = re.search(r'(?m)^\[\s*\{', result.stdout)
@@ -72,9 +72,12 @@ def apply(directory, mode):
             if hashlib.sha256(path.read_bytes()).hexdigest() != manifest['sql_sha256'].get(key):
                 raise RuntimeError(f'SQL file differs from the manifest: {key}')
     current = query('hangul-hanja-dictionary', mode,
-                    'SELECT sha256,data_version FROM import_metadata LIMIT 1')
+                    'SELECT sha256,data_version,parser_version FROM import_metadata LIMIT 1')
     if len(current) != 1:
         raise RuntimeError('Remote dictionary version is missing or ambiguous')
+    expected_parser = manifest.get('parser_version', 'legacy')
+    if current[0]['parser_version'] != expected_parser:
+        raise RuntimeError('Parser versions differ; apply the matching compatibility repair first')
     if current[0]['sha256'] == manifest['new_sha256']:
         print('D1 already records the new snapshot; verifying row counts.')
     elif current[0]['sha256'] != manifest['old_sha256']:

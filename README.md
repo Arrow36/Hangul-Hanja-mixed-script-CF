@@ -91,11 +91,30 @@ npx wrangler d1 execute hangul-hanja-raw --remote --command "SELECT count(DISTIN
 
 期望 `경제 → 經濟`、词条 56,555、原始 JSON 词条 56,555。导入占用请在 Cloudflare D1 面板确认；本地 SQLite 大小只是估计。
 
+### 同一 ZIP 的解析兼容修复
+
+`20261023.1` 解析器保留重复分类、全部句型和逐项配对的发音/音频，解析已核实的 `<hanja>` 引用，并为 `<word_no>` 建立目标引用。原始 JSON 保持不变。未知汉字引用会停止导入，避免静默丢失转换候选。已核实的映射及快照出处见 `scripts/hanja_references.json`。
+
+线上已导入同一 ZIP 时，使用专用修复脚本；普通增量更新会拒绝相同 SHA 的输入。先从该 ZIP 的完整 SQLite 快照准备修复包，再应用主库 migration 和修复：
+
+```bash
+python scripts/repair_compatibility.py prepare output/snapshots/20261019.db output/repair/20261023-compat
+npx wrangler d1 migrations apply hangul-hanja-dictionary --remote
+python scripts/repair_compatibility.py apply output/repair/20261023-compat --remote --apply
+```
+
+准备目录必须是新目录。脚本校验源 ZIP SHA、词条数、SQL 校验和及候选前置条件，逐条比较全部补充数据后才记录完成。中断后可用同一目录重跑。此步骤只写主库的派生数据，不写原始 JSON 库，也不重新导入整个词典。20261019 快照补齐 3,709 个词条，恢复 `밀착시키다 → 密着시키다` 和 `부담시키다 → 負擔시키다`，含汉字词源的词条增至 34,150。
+
+必须先完成数据库 migration 和修复，再部署引用新表的 Worker。之后 `/api/version` 应返回 `parser_version: "20261023.1"`，数据版本仍是 `20261019`。详情 API 保留旧标量字段，并提供 `semantic_categories`、`subject_categories`、各义项的 `syntactic_patterns` 和需要多发音的词形中的 `pronunciation_variants`；页面只渲染允许的词典标记，其他尖括号文本按字面显示。
+
+后续 ZIP 更新要求新旧 SQLite 使用相同解析器。可从旧 ZIP 重新导入一份新解析器基线；也可先对旧 SQLite 应用 `0002_dictionary_compatibility.sql`，再用修复脚本的 `--sqlite 路径 --apply` 修复。然后按普通增量流程更新。不要只手工修改 `parser_version` 来跳过检查。
+
 ## 4. 本地运行与验证
 
 ```bash
 npm run build
 npm test
+python -m unittest discover -s tests_cf -p 'test_*.py' -v
 npx wrangler deploy --dry-run
 npm run dev
 ```

@@ -5,5 +5,6 @@
   "total_entries": 56555,
   "total_senses": 76833,
   "total_examples": 659520,
-  "entries_with_hanja_origin": 34148
+  "entries_with_hanja_origin": 34150,
+  "parser_version": "20261023.1"
 }

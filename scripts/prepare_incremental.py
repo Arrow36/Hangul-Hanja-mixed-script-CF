@@ -65,6 +65,10 @@ def main_lines(db, entry_id):
         yield from child_lines(db, 'form_representations', 'word_form_id', form['id'], form_id)
     for table in ('related_forms', 'conversion_candidates'):
         yield from child_lines(db, table, 'entry_id', entry_id)
+    if db.execute("SELECT 1 FROM sqlite_master WHERE name='entry_compatibility'").fetchone():
+        extra = db.execute('SELECT data_json FROM entry_compatibility WHERE entry_id=?', (entry_id,)).fetchone()
+        if extra:
+            yield insert('entry_compatibility', ('entry_id', 'data_json'), (entry_id, extra[0]))
 
 
 def raw_lines(db, entry_id):
@@ -124,11 +128,20 @@ def prepare(old_path, new_path, output):
         old.row_factory = new.row_factory = sqlite3.Row
         validate_schema(old); validate_schema(new)
         old_meta, new_meta = metadata(old), metadata(new)
+        parser = old_meta.get('parser_version', 'legacy')
+        if parser != new_meta.get('parser_version', 'legacy'):
+            raise ValueError('Parser versions differ; use repair_compatibility.py on the baseline first')
         if old_meta['sha256'] == new_meta['sha256']:
             raise ValueError('Both SQLite files represent the same source ZIP')
         old_rows = {row['id']: row['raw_json'] for row in old.execute('SELECT id,raw_json FROM entries')}
         new_rows = {row['id']: row['raw_json'] for row in new.execute('SELECT id,raw_json FROM entries')}
-        changed = sorted(key for key in old_rows.keys() & new_rows.keys() if old_rows[key] != new_rows[key])
+        def extras(db):
+            if not db.execute("SELECT 1 FROM sqlite_master WHERE name='entry_compatibility'").fetchone():
+                return {}
+            return dict(db.execute('SELECT entry_id,data_json FROM entry_compatibility'))
+        old_extra, new_extra = extras(old), extras(new)
+        changed = sorted(key for key in old_rows.keys() & new_rows.keys()
+                         if old_rows[key] != new_rows[key] or old_extra.get(key) != new_extra.get(key))
         added = sorted(new_rows.keys() - old_rows.keys())
         removed = sorted(old_rows.keys() - new_rows.keys())
         ids = sorted(set(changed + added + removed))
@@ -152,7 +165,8 @@ def prepare(old_path, new_path, output):
                     'old_version': old_meta['data_version'], 'new_version': new_meta['data_version'],
                     'old_entries': len(old_rows), 'new_entries': len(new_rows),
                     'added': len(added), 'changed': len(changed), 'removed': len(removed),
-                    'main_files': main_writer.index, 'raw_files': raw_writer.index}
+                    'main_files': main_writer.index, 'raw_files': raw_writer.index,
+                    'parser_version': parser}
         manifest['sql_sha256'] = {
             str(path.relative_to(output)).replace('\\', '/'): hashlib.sha256(path.read_bytes()).hexdigest()
             for part in ('raw', 'main') for path in sorted((output / part).glob('*.sql'))

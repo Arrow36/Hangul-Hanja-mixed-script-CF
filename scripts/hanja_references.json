@@ -1,0 +1,6 @@
+{
+  "source": "Aligned official 20260919 literal origins with 20261019 Hanja references for entries 85442 and 85458; unknown IDs must fail validation.",
+  "baseline_sha256": "F9C1B9309AFE66429A92CCA1B2C426DB25EC809D04103ACA74C3A23859280DF6",
+  "snapshot_sha256": "C8F9FFBF7E9BE1F1EC86FA29E4160A75EEE8044FC081C27788DADF3CEB66D34E",
+  "characters": {"6255_1":"密", "10964_2":"着", "14861_1":"負", "7689_1":"擔"}
+}

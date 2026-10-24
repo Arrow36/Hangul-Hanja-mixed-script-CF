@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap');
 
+        .pronunciation-box { flex-wrap: wrap; }
+        .pronunciation-variant { display: inline-flex; align-items: center; gap: 4px; }
+        .dictionary-reference { border: 0; background: none; padding: 0 2px; color: #1565c0; text-decoration: underline; font: inherit; cursor: pointer; }
+
         :root {
             --bg-color: #faf8f5;
             --card-bg: #ffffff;

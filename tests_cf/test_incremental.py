@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
-from prepare_incremental import prepare  # noqa: E402
+from prepare_incremental import prepare, main_lines  # noqa: E402
 from app.schema import create_schema  # noqa: E402
 
 
@@ -38,6 +38,38 @@ def make_snapshot(path, version, entries):
 
 
 class IncrementalTest(unittest.TestCase):
+    def test_reference_only_change_and_parser_guard(self):
+        output = ROOT / 'output'
+        output.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=output) as directory:
+            root = Path(directory)
+            old, new, result = root / 'old.db', root / 'new.db', root / 'delta'
+            make_snapshot(old, 'old', {1: 'unchanged raw'})
+            make_snapshot(new, 'new', {1: 'unchanged raw'})
+            for path, target in ((old, None), (new, 1)):
+                with closing(sqlite3.connect(path)) as db:
+                    db.execute('INSERT INTO entry_compatibility VALUES (?,?)',
+                               (1, json.dumps({'references': {'999': target}})))
+                    db.commit()
+            manifest = prepare(old, new, result)
+            self.assertEqual(manifest['changed'], 1)
+            with closing(sqlite3.connect(':memory:')) as db, closing(sqlite3.connect(old)) as source:
+                db.executescript((ROOT / 'migrations' / '0001_schema.sql').read_text(encoding='utf-8'))
+                db.executescript((ROOT / 'migrations' / '0002_dictionary_compatibility.sql').read_text(encoding='utf-8'))
+                db.execute('PRAGMA foreign_keys=ON')
+                source.row_factory = sqlite3.Row
+                db.executescript(''.join(main_lines(source, 1)))
+                for path in sorted((result / 'main').glob('*.sql')):
+                    db.executescript(path.read_text(encoding='utf-8'))
+                data = json.loads(db.execute('SELECT data_json FROM entry_compatibility').fetchone()[0])
+                self.assertEqual(data['references']['999'], 1)
+                self.assertEqual(db.execute('PRAGMA foreign_key_check').fetchall(), [])
+            with closing(sqlite3.connect(new)) as db:
+                db.execute("UPDATE import_metadata SET parser_version='next'")
+                db.commit()
+            with self.assertRaisesRegex(ValueError, 'Parser versions differ'):
+                prepare(old, new, root / 'mismatch')
+
     def test_changed_added_removed_and_replay(self):
         output = ROOT / 'output'
         output.mkdir(parents=True, exist_ok=True)
@@ -50,6 +82,7 @@ class IncrementalTest(unittest.TestCase):
             self.assertEqual((manifest['added'], manifest['changed'], manifest['removed']), (1, 1, 1))
             main = sqlite3.connect(root / 'main.db')
             main.executescript((ROOT / 'migrations' / '0001_schema.sql').read_text(encoding='utf-8'))
+            main.executescript((ROOT / 'migrations' / '0002_dictionary_compatibility.sql').read_text(encoding='utf-8'))
             main.execute('ATTACH DATABASE ? AS source', (str(old),))
             for table in ('import_metadata', 'entries', 'senses', 'equivalents', 'sense_examples',
                           'sense_relations', 'multimedia', 'word_forms', 'form_representations',

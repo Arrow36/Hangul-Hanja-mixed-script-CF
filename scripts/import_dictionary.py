@@ -21,6 +21,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.dictionary_compat import PARSER_VERSION, normalize_origin, supplement, encode, finalize_supplements
 
 CJK_RE = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]')
 
@@ -156,7 +157,7 @@ def import_entry(conn, entry, stats, id_tracker):
         stats['skipped'] += 1
         return
     
-    origin_raw = first_val(feats.get('origin', ''))
+    origin_raw = normalize_origin(first_val(feats.get('origin', '')))
     homonym_num = feats.get('homonym_number', '')
     import_error = None
     try:
@@ -189,6 +190,9 @@ def import_entry(conn, entry, stats, id_tracker):
         raw_json,
     ))
     stats['entries'] += 1
+    extra = supplement(entry)
+    if extra:
+        conn.execute('INSERT INTO entry_compatibility VALUES (?,?)', (entry_id, encode(extra)))
     
     # Senses
     senses = ensure_list(entry.get('Sense'))
@@ -449,8 +453,8 @@ def main():
         conn.execute('''
             INSERT INTO import_metadata (
                 source_filename, sha256, import_timestamp, data_version,
-                total_entries, total_senses, total_examples, origin_entries
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                total_entries, total_senses, total_examples, origin_entries, parser_version
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             os.path.basename(zip_path),
             sha256,
@@ -460,7 +464,9 @@ def main():
             stats['senses'],
             stats['examples'],
             stats['origin_entries'],
+            PARSER_VERSION,
         ))
+        finalize_supplements(conn)
         conn.commit()
 
         integrity = conn.execute('PRAGMA integrity_check').fetchone()[0]

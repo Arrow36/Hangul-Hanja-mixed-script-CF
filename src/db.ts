@@ -4,6 +4,13 @@ export interface Candidate {
   vocabulary_level: string | null; homonym_number: number | null;
 }
 type Row = Record<string, unknown>;
+interface Compatibility {
+  semantic_categories?: string[];
+  subject_categories?: string[];
+  syntactic_patterns?: Record<string, string[]>;
+  word_forms?: Row[];
+  references?: Record<string, number | null>;
+}
 export async function batchCandidates(db: D1Database, words: string[]): Promise<Record<string, Candidate[]>> {
   const result: Record<string, Candidate[]> = Object.fromEntries(words.map(w => [w, []]));
   if (!words.length) return result;
@@ -60,16 +67,21 @@ export async function entryDetail(db: D1Database, id: number): Promise<Row | nul
     WHERE id=? OR target_code=? ORDER BY CASE WHEN id=? THEN 0 ELSE 1 END,id LIMIT 1`).bind(id,id,id).first<Row>();
   if (!entry) return null;
   const actual = Number(entry.id);
+  const extra = await db.prepare('SELECT data_json FROM entry_compatibility WHERE entry_id=?').bind(actual).first<{data_json: string}>();
+  const compatibility: Compatibility = extra ? JSON.parse(extra.data_json) as Compatibility : {};
+  entry.semantic_categories = compatibility.semantic_categories ?? (entry.semantic_category ? [entry.semantic_category] : []);
+  entry.subject_categories = compatibility.subject_categories ?? (entry.subject_category ? [entry.subject_category] : []);
+  entry.references = compatibility.references ?? {};
   const senses = (await db.prepare('SELECT * FROM senses WHERE entry_id=? ORDER BY sense_number').bind(actual).all<Row>()).results;
   const senseIds = senses.map(s => Number(s.id));
   const [equiv, examples, relations, media] = await Promise.all([
     children(db, 'equivalents', 'sense_id', senseIds), children(db, 'sense_examples', 'sense_id', senseIds),
     children(db, 'sense_relations', 'sense_id', senseIds), children(db, 'multimedia', 'sense_id', senseIds)
   ]);
-  entry.senses = senses.map(s => ({...s, equivalents: equiv.get(Number(s.id)) ?? [], examples: examples.get(Number(s.id)) ?? [], relations: relations.get(Number(s.id)) ?? [], multimedia: media.get(Number(s.id)) ?? []}));
+  entry.senses = senses.map(s => ({...s, syntactic_patterns: compatibility.syntactic_patterns?.[String(s.sense_number)] ?? (s.syntactic_pattern ? [s.syntactic_pattern] : []), equivalents: equiv.get(Number(s.id)) ?? [], examples: examples.get(Number(s.id)) ?? [], relations: relations.get(Number(s.id)) ?? [], multimedia: media.get(Number(s.id)) ?? []}));
   const wordForms = (await db.prepare('SELECT * FROM word_forms WHERE entry_id=? ORDER BY id').bind(actual).all<Row>()).results;
   const representations = await children(db, 'form_representations', 'word_form_id', wordForms.map(w => Number(w.id)));
-  entry.word_forms = wordForms.map(w => ({...w, sub_forms: representations.get(Number(w.id)) ?? []}));
+  entry.word_forms = compatibility.word_forms ?? wordForms.map(w => ({...w, sub_forms: representations.get(Number(w.id)) ?? []}));
   entry.related_forms = (await db.prepare('SELECT * FROM related_forms WHERE entry_id=? ORDER BY id').bind(actual).all<Row>()).results;
   entry.raw_json = null;
   return entry;

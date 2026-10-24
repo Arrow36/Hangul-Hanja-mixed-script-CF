@@ -8,7 +8,7 @@ from pathlib import Path
 
 TABLES = ('import_metadata', 'entries', 'senses', 'equivalents', 'sense_examples',
           'sense_relations', 'multimedia', 'word_forms', 'form_representations',
-          'related_forms', 'conversion_candidates')
+          'related_forms', 'conversion_candidates', 'entry_compatibility')
 MAX_FILE = 2_000_000
 
 def quote(value):
@@ -49,6 +49,8 @@ def main():
     try:
         for table in TABLES:
             columns = [row[1] for row in db.execute(f'PRAGMA table_info({table})')]
+            if not columns and table == 'entry_compatibility':
+                continue  # Legacy source snapshot; run compatibility repair after import.
             for row in db.execute(f'SELECT * FROM {table}'):
                 vals = [None if table == 'entries' and col == 'raw_json' else row[col] for col in columns]
                 main_writer.write(f'INSERT OR IGNORE INTO {table} ({",".join(columns)}) VALUES ({",".join(map(quote, vals))});\n')
